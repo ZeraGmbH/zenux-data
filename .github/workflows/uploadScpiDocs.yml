@@ -25,3 +25,18 @@ jobs:
             tar -xf scpi_docs.tar.xz -C /
             rm scpi_docs.tar.xz
             ls -la $HOME/html-docs
+
+      - name: Checkout git
+        uses: actions/checkout@v4
+
+      - name: Commit scpi-docs
+        run: |
+          ls
+          git config --global user.name 'gitbot'
+          git config --global user.email 'gitbot@noreply.de'
+          git checkout main
+          mkdir -p scpi-documentation
+          cp -r $HOME/html-docs/* scpi-documentation/
+          git add .
+          git commit -sm "Update scpi-docs"
+          git push
