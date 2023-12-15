@@ -13,15 +13,15 @@ jobs:
           echo "Home: $HOME"
           echo "Workspace: $GITHUB_WORKSPACE"
 
-      - name: Download zera-classes's html-docs artifact
+      - name: Download zera-classes's scpi-docs artifact
         uses: dawidd6/action-download-artifact@v2
         with:
           repo: ZeraGmbH/zera-classes
-          name: html-docs-artifact
+          name: scpi-docs-artifact
           workflow: generateScpiDocs.yml
 
-      - name: Untar zera-classes's html-docs artifact
+      - name: Untar zera-classes's scpi-docs artifact
         run: |
-            tar -xf html_docs.tar.xz -C /
-            rm html_docs.tar.xz
+            tar -xf scpi_docs.tar.xz -C /
+            rm scpi_docs.tar.xz
             ls -la $HOME/html-docs
