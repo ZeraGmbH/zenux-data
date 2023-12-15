@@ -1,0 +1,27 @@
+name: Upload SCPI docs
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container:
+      image: schnitzeltony/fedora-qt5:32
+    steps:
+      - name: Echo github environment
+        run: |
+          echo "Home: $HOME"
+          echo "Workspace: $GITHUB_WORKSPACE"
+
+      - name: Download zera-classes's html-docs artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          repo: ZeraGmbH/zera-classes
+          name: html-docs-artifact
+          workflow: generateScpiDocs.yml
+
+      - name: Untar zera-classes's html-docs artifact
+        run: |
+            tar -xf html_docs.tar.xz -C /
+            rm html_docs.tar.xz
+            ls -la $HOME/html-docs
