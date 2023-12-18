@@ -1,6 +1,11 @@
 name: Upload SCPI docs
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: release/snapshot version
+        required: true
+        type: string
 
 jobs:
   run:
@@ -38,5 +43,5 @@ jobs:
           mkdir -p scpi-documentation
           cp -r $HOME/html-docs/* scpi-documentation/
           git add .
-          git commit -sm "Update scpi-docs"
+          git commit -sm "Update scpi-docs ${{ github.event.inputs.version}}"
           git push
