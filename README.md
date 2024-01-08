@@ -19,3 +19,4 @@ Given below are links to the most recent versions of these documents:
 4. [3 Systems / 2 Wires Session](https://ZeraGmbH.github.io/zenux-data/scpi-documentation/com5003-perphase-session.html)
 
 ### Previous versions
+- [release-4.4.3](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.4.3.tar.xz)
