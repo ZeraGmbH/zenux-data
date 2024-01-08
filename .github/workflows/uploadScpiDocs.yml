@@ -36,17 +36,14 @@ jobs:
 
       - name: Commit scpi-docs
         run: |
-          ls
           git config --global user.name 'gitbot'
           git config --global user.email 'gitbot@noreply.de'
           mkdir -p scpi-documentation && cd scpi-documentation
           cp -r $HOME/html-docs/* .
-          mkdir -p archive/${{ github.event.inputs.version}}
-          cp -r $HOME/html-docs/* archive/${{ github.event.inputs.version}}/
-          tar -cJf archive/${{ github.event.inputs.version}}.tar.xz archive/${{ github.event.inputs.version}}/*
-          rm -r archive/${{ github.event.inputs.version}}
+          mkdir -p archive
+          tar -cJf archive/${{ github.event.inputs.version}}.tar.xz *.html
           cd ..
-          echo '- [${{ github.event.inputs.version}}](https://zeragmbh.github.io/zenux-data/scpi-documentation/${{ github.event.inputs.version}}.tar.xz)' >> README.md
+          echo -n '- [${{ github.event.inputs.version}}](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz)' >> README.md
           git add .
-          git commit -sm "Update scpi-docs ${{ github.event.inputs.version}}"
+          git commit -sm "Update scpi-docs for Zenux version ${{ github.event.inputs.version}}"
           git push
