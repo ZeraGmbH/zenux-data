@@ -29,7 +29,7 @@ jobs:
         run: |
             tar -xf scpi_docs.tar.xz -C /
             rm scpi_docs.tar.xz
-            ls -la $HOME/html-docs
+            ls -la $HOME/
 
       - name: Checkout git
         uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
           tar -cJf archive/${{ github.event.inputs.version}}.tar.xz *.html
           cd ..
           pip3 install mdutils
-          python3 updateReadMe.py ${{ github.event.inputs.version}}
+          python3 updateReadMe.py ${{ github.event.inputs.version}} $HOME/SessionNamesMapping.json
           git add .
           git commit -sm "Update scpi-docs for Zenux version ${{ github.event.inputs.version}}"
           git push
