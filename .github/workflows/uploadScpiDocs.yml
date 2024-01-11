@@ -43,7 +43,8 @@ jobs:
           mkdir -p archive
           tar -cJf archive/${{ github.event.inputs.version}}.tar.xz *.html
           cd ..
-          echo -n '- [${{ github.event.inputs.version}}](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz)' >> README.md
+          pip3 install mdutils
+          python3 updateReadMe.py ${{ github.event.inputs.version}}
           git add .
           git commit -sm "Update scpi-docs for Zenux version ${{ github.event.inputs.version}}"
           git push
