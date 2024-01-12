@@ -10,25 +10,34 @@ def parseArguments():
     args = parser.parse_args()
     return args
 
+def markdownSpecialChars():
+    return ["*", "**", ">", "- ", "# ", "## ", "### "]
+
+def renameDictKeys(originalDict, searchStr, replacementStr):
+    renamedDict = dict()
+    for key,value in originalDict.items():
+        renamedDict[key.replace(searchStr, replacementStr)] = value
+    return renamedDict
+
+def escapeMDSpecialChars(map):
+    for key in map :
+        for specialChar in markdownSpecialChars() :
+            escapeChar = "\\" + specialChar
+            map[key] = map[key].replace(specialChar, escapeChar)
+    return map
+
+def parseSessionNamesJson(jsonFile):
+    sessionNamesMap = json.load(open(jsonFile))
+    mtmap = renameDictKeys(sessionNamesMap["mt310s2"], "json", "html")
+    commap = renameDictKeys(sessionNamesMap["com5003"], "json", "html")
+    mtmap = escapeMDSpecialChars(mtmap)
+    commap = escapeMDSpecialChars(commap)
+    return mtmap, commap
+
+
 args = parseArguments();
-sessionNamesMap = json.load(open(args.SessionNamesJson))
-mtmap = sessionNamesMap["mt310s2"]
-commap = sessionNamesMap["com5003"]
-mdSpecialSyntax = ["*", "**", ">", "- ", "# ", "## ", "### "]
 
-mtmap = {key.replace("json", "html"):value for key,value in mtmap.items()}
-commap = {key.replace("json", "html"):value for key,value in commap.items()}
-
-
-for session in mtmap :
-    for specialChar in mdSpecialSyntax :
-        escapeChar = "\\" + specialChar
-        mtmap[session] = mtmap[session].replace(specialChar, escapeChar)
-
-for session in commap :
-    for specialChar in mdSpecialSyntax :
-        escapeChar = "\\" + specialChar
-        commap[session] = commap[session].replace(specialChar, escapeChar)
+mtmap, commap = parseSessionNamesJson(args.SessionNamesJson)
 
 #Recreate from title to 'Previous versions'
 newReadMe = MdUtils(file_name='NEW_README.md',title='zenux-data')
