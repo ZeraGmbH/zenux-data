@@ -1,10 +1,17 @@
 import os
-import sys
+import argparse
 import json
 from mdutils.mdutils import MdUtils
 
-jsonFile = sys.argv[2]
-sessionNamesMap = json.load(open(jsonFile))
+def parseArguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--ZenuxVersion', type=str, required=True, help='')
+    parser.add_argument('--SessionNamesJson', type=str, required=True, help='')
+    args = parser.parse_args()
+    return args
+
+args = parseArguments();
+sessionNamesMap = json.load(open(args.SessionNamesJson))
 mtmap = sessionNamesMap["mt310s2"]
 commap = sessionNamesMap["com5003"]
 mdSpecialSyntax = ["*", "**", ">", "- ", "# ", "## ", "### "]
@@ -46,8 +53,7 @@ oldReadMe = MdUtils(file_name='README.md',title='zenux-data')
 oldReadMeContents = oldReadMe.read_md_file('README.md')
 newReadMe.write(oldReadMeContents.split("### Previous versions")[1])
 
-version = sys.argv[1]
-newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/' + version + '.tar.xz', text=version))
+newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/' + args.ZenuxVersion + '.tar.xz', text=args.ZenuxVersion))
 newReadMe.create_md_file()
 
 os.remove("README.md")
