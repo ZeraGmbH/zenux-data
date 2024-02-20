@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>COM5003 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>11-Jan-2024</b></i></footer><script>
+    </svg>COM5003 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>20-Feb-2024</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.4.3</b>.</p>
+<p>This document was created with operating system version: <b>release-4.5.0</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -486,20 +486,20 @@
 <th>Unit</th>
 </tr>
 <tr>
-<td>Reference channel</td>
-<td>CONFIGURATION:DFT1:REFCHANNEL</td>
-<td></td>
-<td>REF5,REF6,REF1,REF2,REF3,REF4</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:DFT1:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
 <td>s</td>
+</tr>
+<tr>
+<td>Reference channel</td>
+<td>CONFIGURATION:DFT1:REFCHANNEL</td>
+<td></td>
+<td>REF1,REF2,REF3,REF4,REF5,REF6</td>
+<td>STRING</td>
+<td></td>
 </tr>
 </table>
 </div>
@@ -531,17 +531,17 @@
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value</td>
 <td>MEASURE:DFT1:REF4?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value</td>
 <td>MEASURE:DFT1:REF5?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value</td>
 <td>MEASURE:DFT1:REF6?</td>
 <td>V</td>
 </tr>
@@ -574,11 +574,19 @@
 <td></td>
 </tr>
 <tr>
-<td>Active phases selection mask</td>
-<td>CONFIGURATION:POW1:MEASMODEPHASESELECT</td>
+<td>Frequency output name</td>
+<td>CONFIGURATION:POW1:M0OUT</td>
 <td></td>
-<td>111</td>
-<td>STRING</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency output constant</td>
+<td>CONFIGURATION:POW1:M0CONSTANT</td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
@@ -590,19 +598,11 @@
 <td>s</td>
 </tr>
 <tr>
-<td>Frequency output constant</td>
-<td>CONFIGURATION:POW1:M0CONSTANT</td>
+<td>Active phases selection mask</td>
+<td>CONFIGURATION:POW1:MEASMODEPHASESELECT</td>
 <td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Frequency output name</td>
-<td>CONFIGURATION:POW1:M0OUT</td>
-<td></td>
-<td></td>
-<td></td>
+<td>111</td>
+<td>STRING</td>
 <td></td>
 </tr>
 </table>
@@ -924,6 +924,22 @@
 <td></td>
 </tr>
 <tr>
+<td>Current measurement end time (dd-MM-yyyy  HH:mm:ss)</td>
+<td>CALCULATE:EC01:0001:ENDTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Current measurement start time (dd-MM-yyyy  HH:mm:ss)</td>
+<td>CALCULATE:EC01:0001:STRTTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>DUT constant</td>
 <td>CALCULATE:EC01:0001:DUTCONSTANT</td>
 <td>1e-06 / 1e+20</td>
@@ -1118,6 +1134,14 @@
 <tr>
 <td>Status: 0:Idle 1:Waiting for first pulse 2:Started 4:Ready 8:Aborted</td>
 <td>CALCULATE:EC01:0001:STATUS</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>measurement time</td>
+<td>CALCULATE:EC01:0001:MMEASTIME</td>
 <td></td>
 <td></td>
 <td></td>
