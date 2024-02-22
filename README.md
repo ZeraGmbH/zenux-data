@@ -23,5 +23,7 @@ Given below are links to the most recent versions of these documents:
 - [Reference session](https://ZeraGmbH.github.io/zenux-data/scpi-documentation/com5003-ref-session.html)
 ### Previous versions
 
+
 - [release-4.4.3](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.4.3.tar.xz)  
-- [release-4.5.0](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.5.0.tar.xz)
+- [release-4.5.0](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.5.0.tar.xz)  
+- [release-4.5.1](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.5.1.tar.xz)
