@@ -43,6 +43,7 @@ mtmap, commap = parseSessionNamesJson(args.SessionNamesJson)
 newReadMe = MdUtils(file_name='NEW_README.md',title='zenux-data')
 
 newReadMe.new_paragraph("This is a set of documents describing SCPI interface on MT310s2 and COM5003 devices.")
+newReadMe.new_line("These documents are created with operating system version: **" + args.ZenuxVersion + "**")
 newReadMe.new_header(level=2, title='SCPI Interface Descriptions', add_table_of_contents="n")
 
 newReadMe.new_paragraph("Given below are links to the most recent versions of these documents:")
