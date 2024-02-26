@@ -36,15 +36,15 @@ jobs:
 
       - name: Commit scpi-docs
         run: |
+          pip3 install mdutils
           git config --global user.name 'gitbot'
           git config --global user.email 'gitbot@noreply.de'
-          mkdir -p scpi-documentation && cd scpi-documentation
-          cp -r $HOME/html-docs/* .
-          mkdir -p archive
-          tar -cJf archive/${{ github.event.inputs.version}}.tar.xz *.html
-          cd ..
-          pip3 install mdutils
+
+          mkdir -p scpi-documentation/archive
+          cp -r $HOME/html-docs/* scpi-documentation
           python3 updateReadMe.py --ZenuxVersion ${{ github.event.inputs.version}} --SessionNamesJson $HOME/SessionNamesMapping.json
+          tar -cJf scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz *.html
+
           git add .
           git commit -sm "Update scpi-docs for Zenux version ${{ github.event.inputs.version}}"
           git push
