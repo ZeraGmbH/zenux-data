@@ -34,6 +34,15 @@ def parseSessionNamesJson(jsonFile):
     commap = escapeMDSpecialChars(commap)
     return mtmap, commap
 
+def getArchiveEntries(dir):
+    archives = list()
+    for x in os.listdir(dir):
+        if x.endswith(".tar.xz"):
+            archives.append(x)
+    archivesSorted = sorted(archives)
+    archivesSorted.reverse()
+    return archivesSorted
+
 
 args = parseArguments();
 
@@ -56,14 +65,13 @@ newReadMe.new_header(level=3, title='COM5003', add_table_of_contents="n")
 for i in commap :
     newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://ZeraGmbH.github.io/zenux-data/scpi-documentation/' + i, text=commap[i] + ' session'))
 
+#'Previous versions'
 newReadMe.new_header(level=3, title='Previous versions', add_table_of_contents="n")
+archives = getArchiveEntries("scpi-documentation/archive/")
+for file in archives:
+    releaseVersion = file.replace('.tar.xz', '')
+    newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/' + file, text=releaseVersion))
 
-#Take existing list under 'Previous versions'
-oldReadMe = MdUtils(file_name='README.md',title='zenux-data')
-oldReadMeContents = oldReadMe.read_md_file('README.md')
-newReadMe.write(oldReadMeContents.split("### Previous versions")[1])
-
-newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/' + args.ZenuxVersion + '.tar.xz', text=args.ZenuxVersion))
 newReadMe.create_md_file()
 
 os.remove("README.md")
