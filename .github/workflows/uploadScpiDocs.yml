@@ -42,6 +42,9 @@ jobs:
 
           mkdir -p scpi-documentation/archive
           cp -r $HOME/html-docs/* scpi-documentation
+          if [ -f "scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz" ]; then
+            rm scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz
+          fi
           python3 updateReadMe.py --ZenuxVersion ${{ github.event.inputs.version}} --SessionNamesJson $HOME/SessionNamesMapping.json
           tar -cJf scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz scpi-documentation/*.html
 
