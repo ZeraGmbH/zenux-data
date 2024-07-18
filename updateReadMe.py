@@ -34,15 +34,17 @@ def parseSessionNamesJson(jsonFile):
     commap = escapeMDSpecialChars(commap)
     return mtmap, commap
 
+def sort_by_release_number(s):
+    numb = (s.split('-')[1]).replace('.tar.xz', '')
+    return [int(c) for c in numb.split('.')]
+
 def getArchiveEntries(dir):
     archives = list()
     for x in os.listdir(dir):
         if x.endswith(".tar.xz"):
             archives.append(x)
-    archivesSorted = sorted(archives)
-    archivesSorted.reverse()
+    archivesSorted = sorted(archives, key=sort_by_release_number, reverse=True)
     return archivesSorted
-
 
 args = parseArguments();
 
