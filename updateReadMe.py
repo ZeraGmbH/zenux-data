@@ -62,10 +62,12 @@ newReadMe.new_paragraph("Given below are links to the most recent versions of th
 newReadMe.new_header(level=3, title='MT310s2', add_table_of_contents="n")
 for i in mtmap :
     newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://ZeraGmbH.github.io/zenux-data/scpi-documentation/' + i, text=mtmap[i] + ' session'))
+newReadMe.new_line('')
 
 newReadMe.new_header(level=3, title='COM5003', add_table_of_contents="n")
 for i in commap :
     newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://ZeraGmbH.github.io/zenux-data/scpi-documentation/' + i, text=commap[i] + ' session'))
+newReadMe.new_line('')
 
 #'Previous versions'
 newReadMe.new_header(level=3, title='Previous versions', add_table_of_contents="n")
@@ -73,6 +75,7 @@ archives = getArchiveEntries("scpi-documentation/archive/")
 for file in archives:
     releaseVersion = file.replace('.tar.xz', '')
     newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/' + file, text=releaseVersion))
+newReadMe.new_line('')
 
 newReadMe.create_md_file()
 
