@@ -19,7 +19,7 @@ jobs:
           echo "Workspace: $GITHUB_WORKSPACE"
 
       - name: Download zera-classes's scpi-docs artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           repo: ZeraGmbH/zera-classes
           name: scpi-docs-artifact
