@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>COM5003 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>06-Aug-2024</b></i></footer><script>
+    </svg>COM5003 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>19-Sep-2024</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.6.16</b>.</p>
+<p>This document was created with operating system version: <b>release-4.6.17</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -172,21 +172,22 @@
 <li><a href="#DeviceConnection">2. Device connection</a></li>
 <li><a href="#DeviceInfo">3. Device information</a></li>
 <li><a href="#DevIface">4. Device interface</a></li>
-<li><a href="#ScpiStandardCmds">5. Standard SCPI commands</a></li>
-<li><a href="#MeasSystems">6. Measurement systems</a></li>
+<li><a href="#SystemCmds">5. System commands</a></li>
+<li><a href="#ScpiStandardCmds">6. Standard SCPI commands</a></li>
+<li><a href="#MeasSystems">7. Measurement systems</a></li>
 <ul>
-<li><a href="#PhaseValues">6.1 Phase amplitudes and angles</a></li>
-<li><a href="#PowerMeasurement">6.2 Power measurement</a></li>
-<li><a href="#FFTValues">6.3 FFT/DC values</a></li>
-<li><a href="#RMSValues">6.4 RMS values</a></li>
-<li><a href="#ThdMeasurement">6.5 THD measurement</a></li>
-<li><a href="#LambdaValues">6.6 Lambda values</a></li>
-<li><a href="#HarmonicPowerValues">6.7 Harmonic power values</a></li>
-<li><a href="#OSCValues">6.8 Oscilloscope values</a></li>
-<li><a href="#SamplingConfigs">6.9 Sampling/PLL configurations</a></li>
+<li><a href="#PhaseValues">7.1 Phase amplitudes and angles</a></li>
+<li><a href="#PowerMeasurement">7.2 Power measurement</a></li>
+<li><a href="#FFTValues">7.3 FFT/DC values</a></li>
+<li><a href="#RMSValues">7.4 RMS values</a></li>
+<li><a href="#ThdMeasurement">7.5 THD measurement</a></li>
+<li><a href="#LambdaValues">7.6 Lambda values</a></li>
+<li><a href="#HarmonicPowerValues">7.7 Harmonic power values</a></li>
+<li><a href="#OSCValues">7.8 Oscilloscope values</a></li>
+<li><a href="#SamplingConfigs">7.9 Sampling/PLL configurations</a></li>
 </ul>
-<li><a href="#Ranges">7. Ranges</a></li>
-<li><a href="#ErrorCalculators">8. Comparison Measurements</a></li>
+<li><a href="#Ranges">8. Ranges</a></li>
+<li><a href="#ErrorCalculators">9. Comparison Measurements</a></li>
 </ul>
 </div>
 <h1 id="ScpiStandard">1. SCPI Standard</h1>
@@ -332,7 +333,22 @@
 <tr><th>SCPI query</th></tr>
 <tr><td>DEVICE:IFACE?</td></tr>
 </table></div>
-<h1 id="ScpiStandardCmds">5. Standard SCPI commands</h1>
+<h1 id="SystemCmds">5. System commands</h1>
+<div class="DataTableDiv"><table class="DataTable">
+<tr>
+<th>Description</th>
+<th>SCPI path</th>
+<th>Valid strings</th>
+<th>Data Type</th>
+</tr>
+<tr>
+<td>Session name</td>
+<td>CONFIGURATION:SYST:NAMESESSION</td>
+<td>Default,Changing energy direction,Reference,3 Systems / 2 Wires</td>
+<td>STRING</td>
+</tr>
+</table></div>
+<h1 id="ScpiStandardCmds">6. Standard SCPI commands</h1>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>SCPI path</th>
@@ -406,7 +422,7 @@
 </tr>
 </table>
 </div>
-<h1 id="MeasSystems">6. Measurement systems</h1>
+<h1 id="MeasSystems">7. Measurement systems</h1>
 <p><html>
 <body>
     <p>
@@ -472,7 +488,7 @@
 
 </body>
 </html></p>
-<h2 id="PhaseValues">6.1 Phase amplitudes and angles</h2>
+<h2 id="PhaseValues">7.1 Phase amplitudes and angles</h2>
 <p><html>
 <body>
     <p>
@@ -509,10 +525,6 @@
 <td></td>
 </tr>
 </table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
@@ -574,7 +586,7 @@
 </tr>
 </table>
 </div>
-<h2 id="PowerMeasurement">6.2 Power measurement</h2>
+<h2 id="PowerMeasurement">7.2 Power measurement</h2>
 <h3>Power 1</h3>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
@@ -1164,7 +1176,7 @@
 </tr>
 </table>
 </div>
-<h2 id="FFTValues">6.3 FFT/DC values</h2>
+<h2 id="FFTValues">7.3 FFT/DC values</h2>
 <p><html>
 <body>
     <p>
@@ -1214,10 +1226,6 @@
 <td></td>
 </tr>
 </table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
@@ -1289,7 +1297,7 @@
 </tr>
 </table>
 </div>
-<h2 id="RMSValues">6.4 RMS values</h2>
+<h2 id="RMSValues">7.4 RMS values</h2>
 <p><html>
 <body>
     <p>
@@ -1319,10 +1327,6 @@
 <td>s</td>
 </tr>
 </table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
@@ -1379,7 +1383,7 @@
 </tr>
 </table>
 </div>
-<h2 id="ThdMeasurement">6.5 THD measurement</h2>
+<h2 id="ThdMeasurement">7.5 THD measurement</h2>
 <p><html>
 <body>
     <p>
@@ -1410,10 +1414,6 @@
 <td>s</td>
 </tr>
 </table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
@@ -1478,10 +1478,6 @@
 </table>
 </div>
 <div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
-</div>
-<div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
 <table class="DataTable">
 <tr>
@@ -1521,7 +1517,7 @@
 </tr>
 </table>
 </div>
-<h2 id="LambdaValues">6.6 Lambda values</h2>
+<h2 id="LambdaValues">7.6 Lambda values</h2>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
 <table class="DataTable">
@@ -1552,7 +1548,7 @@
 </tr>
 </table>
 </div>
-<h2 id="HarmonicPowerValues">6.7 Harmonic power values</h2>
+<h2 id="HarmonicPowerValues">7.7 Harmonic power values</h2>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
 <table class="DataTable">
@@ -1608,7 +1604,7 @@
 </tr>
 </table>
 </div>
-<h2 id="OSCValues">6.8 Oscilloscope values</h2>
+<h2 id="OSCValues">7.8 Oscilloscope values</h2>
 <p><html>
 <body>
     <p>
@@ -1644,10 +1640,6 @@
 <td></td>
 </tr>
 </table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
@@ -1689,7 +1681,7 @@
 </tr>
 </table>
 </div>
-<h1 id="SamplingConfigs">6.9 Sampling/PLL configurations</h1>
+<h1 id="SamplingConfigs">7.9 Sampling/PLL configurations</h1>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>Description</th>
@@ -1716,7 +1708,7 @@
 <td>F50Hz,F20Hz</td>
 </tr>
 </table></div>
-<h1 id="Ranges">7. Ranges</h1>
+<h1 id="Ranges">8. Ranges</h1>
 <p><html>
 <body>
     <p>
@@ -1862,6 +1854,54 @@
 <td></td>
 </tr>
 <tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:UL1:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:UL2:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:UL3:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IL1:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IL2:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IL3:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>Range automatic on/off</td>
 <td>CONFIGURATION:RNG1:RNGAUTO</td>
 <td>0 / 1</td>
@@ -1870,10 +1910,6 @@
 <td></td>
 </tr>
 </table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable"><tr><th>SCPI query</th></tr></table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
@@ -1920,7 +1956,7 @@
 </tr>
 </table>
 </div>
-<h1 id="ErrorCalculators">8. Comparison Measurements</h1>
+<h1 id="ErrorCalculators">9. Comparison Measurements</h1>
 <p><html>
 <body>
     <p>

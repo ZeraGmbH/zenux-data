@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>Adjustment SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>06-Aug-2024</b></i></footer><script>
+    </svg>Adjustment SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>19-Sep-2024</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.6.16</b>.</p>
+<p>This document was created with operating system version: <b>release-4.6.17</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -172,8 +172,9 @@
 <li><a href="#DeviceConnection">2. Device connection</a></li>
 <li><a href="#DeviceInfo">3. Device information</a></li>
 <li><a href="#DevIface">4. Device interface</a></li>
-<li><a href="#ScpiStandardCmds">5. Standard SCPI commands</a></li>
-<li><a href="#Adjustment">6. Adjustment Commands</a></li>
+<li><a href="#SystemCmds">5. System commands</a></li>
+<li><a href="#ScpiStandardCmds">6. Standard SCPI commands</a></li>
+<li><a href="#Adjustment">7. Adjustment Commands</a></li>
 </ul>
 </div>
 <h1 id="ScpiStandard">1. SCPI Standard</h1>
@@ -343,7 +344,22 @@
 <tr><th>SCPI query</th></tr>
 <tr><td>DEVICE:IFACE?</td></tr>
 </table></div>
-<h1 id="ScpiStandardCmds">5. Standard SCPI commands</h1>
+<h1 id="SystemCmds">5. System commands</h1>
+<div class="DataTableDiv"><table class="DataTable">
+<tr>
+<th>Description</th>
+<th>SCPI path</th>
+<th>Valid strings</th>
+<th>Data Type</th>
+</tr>
+<tr>
+<td>Session name</td>
+<td>CONFIGURATION:SYST:NAMESESSION</td>
+<td>Default,EMOB AC,EMOB DC,DC: 4*Voltage / 1*Current</td>
+<td>STRING</td>
+</tr>
+</table></div>
+<h1 id="ScpiStandardCmds">6. Standard SCPI commands</h1>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>SCPI path</th>
@@ -417,7 +433,82 @@
 </tr>
 </table>
 </div>
-<h1 id="Adjustment">6. Adjustment Commands</h1>
+<h1 id="Adjustment">7. Adjustment Commands</h1>
+<p><html>
+<body>
+    <p>
+        The sequence of adjustment commands is important.
+    </p>
+    <ul>
+        <li>
+<b>Init:</b>
+            <p>
+                The init command must be used before starting the range adjustment.<br>
+                For e.g. CALCULATE:ADJ1:INIT UL1,250V; This makes a clear start for the UL1-250V adjustment.
+                It doesn't change the EEPROM and already calculated adjustment data for other channels/ranges.
+            </p>
+        </li>
+        <li>
+<b>Amplitude:</b>
+            <p>
+                This command calculates the amplitude correction value and adds one amplitude correction node.<br>
+                For e.g. CALCULATE:ADJ1:AMPLITUDE UL1,250V,199.9865998284; As long as INIT command isn't called again, all old nodes are maintained.
+            </p>
+        </li>
+        <li>
+<b>Gstatus:</b>
+            <p>
+                Once all gain correction nodes for this range are set, the GSTATUS command can be used to set the status of gain correction.<br>
+                For example, CALCULATE:ADJ1:GSTATUS UL1,250V,128; The status value '128' means this range is adjusted.
+            </p>
+        </li>
+        <li>
+<b>Phase:</b>
+            <p>
+                This command calculates the phase correction value and adds one phase correction node.<br>
+            </p>
+        </li>
+        <li>
+<b>Pstatus:</b>
+            <p>
+                Once all phase correction nodes for this range are set, the PSTATUS command can be used to set the status of phase correction.<br>
+            </p>
+        </li>
+        <li>
+<b>Offset:</b>
+            <p>
+                This command calculates the offset correction value and adds one offset correction node.<br>
+            </p>
+        </li>
+        <li>
+<b>Ostatus:</b>
+            <p>
+                Once all offset correction nodes for this range are set, the OSTATUS command can be used to set the status of offset correction.<br>
+            </p>
+        </li>
+        <li>
+<b>Computation:</b>
+            <p>
+                The 'CALCULATE:ADJ1:COMPUTATION 1' command computes coefficients for all channels and all ranges from the nodes previously set.
+            </p>
+        </li>
+        <li>
+<b>Storage:</b>
+            <p>
+                With 'CALCULATE:ADJ1:STORAGE 1' the computed adjustment data is stored into EEPROM.<br>
+                Ideally, use this command at the end, when all channels and ranges are adjusted.
+            </p>
+        </li>
+        <li>
+<b>Send:</b>
+            <p>
+                The command CALCULATE:ADJ1:SEND forwards the command to the specified port.<br>
+                For e.g. CALCULATE:ADJ1:SEND? 6307,sens:mmod AC\;; The command 'sens:mmod AC;' is forwarded to port 6307.
+            </p>
+        </li>
+    </ul>
+</body>
+</html></p>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>Description</th>
