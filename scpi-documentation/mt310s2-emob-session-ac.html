@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>MT310s2 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>02-Oct-2024</b></i></footer><script>
+    </svg>MT310s2 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>08-Oct-2024</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.6.21</b>.</p>
+<p>This document was created with operating system version: <b>release-4.6.22</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -893,7 +893,7 @@
 </tr>
 </table>
 </div>
-<h3>Power 4</h3>
+<h3>Power 5</h3>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
 <table class="DataTable">
@@ -907,7 +907,7 @@
 </tr>
 <tr>
 <td>Measuring mode</td>
-<td>CONFIGURATION:POW4:MMODE</td>
+<td>CONFIGURATION:POW5:MMODE</td>
 <td></td>
 <td>4LB</td>
 <td>STRING</td>
@@ -915,7 +915,7 @@
 </tr>
 <tr>
 <td>Integration time</td>
-<td>CONFIGURATION:POW4:TINTEGRATION</td>
+<td>CONFIGURATION:POW5:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
@@ -923,7 +923,7 @@
 </tr>
 <tr>
 <td>Active phases selection mask</td>
-<td>CONFIGURATION:POW4:MEASMODEPHASESELECT</td>
+<td>CONFIGURATION:POW5:MEASMODEPHASESELECT</td>
 <td></td>
 <td>111</td>
 <td>STRING</td>
@@ -935,7 +935,7 @@
 <p class="DataTableName"><b>Catalog</b></p>
 <table class="DataTable">
 <tr><th>SCPI query</th></tr>
-<tr><td>CONFIGURATION:POW4:MMODE:CATALOG?</td></tr>
+<tr><td>CONFIGURATION:POW5:MMODE:CATALOG?</td></tr>
 </table>
 </div>
 <div class="DataTableDiv">
@@ -948,22 +948,22 @@
 </tr>
 <tr>
 <td>Actual power value U1/I1</td>
-<td>MEASURE:POW4:Q1?</td>
+<td>MEASURE:POW5:Q1?</td>
 <td>Var</td>
 </tr>
 <tr>
 <td>Actual power value U2/I2</td>
-<td>MEASURE:POW4:Q2?</td>
+<td>MEASURE:POW5:Q2?</td>
 <td>Var</td>
 </tr>
 <tr>
 <td>Actual power value U3/I3</td>
-<td>MEASURE:POW4:Q3?</td>
+<td>MEASURE:POW5:Q3?</td>
 <td>Var</td>
 </tr>
 <tr>
 <td>Actual power value sum all phases</td>
-<td>MEASURE:POW4:QS?</td>
+<td>MEASURE:POW5:QS?</td>
 <td>Var</td>
 </tr>
 </table>
@@ -1921,7 +1921,7 @@
 <td>DUT constant unit</td>
 <td>CALCULATE:EC01:0001:DCUNIT</td>
 <td></td>
-<td>I/kVarh,Varh/I</td>
+<td>I/kWh,Wh/I</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -1947,7 +1947,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>kVarh</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Energy since last start</td>
@@ -1955,7 +1955,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>kVarh</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Energy value</td>
@@ -1963,7 +1963,7 @@
 <td>0 / 1e+07</td>
 <td></td>
 <td>DOUBLE</td>
-<td>kVarh</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Error limit: lower</td>
@@ -2049,7 +2049,7 @@
 <td>REF input</td>
 <td>CALCULATE:EC01:0001:REFSOURCE</td>
 <td></td>
-<td>Q AC</td>
+<td>P AC</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -2182,13 +2182,13 @@
 <td></td>
 <td></td>
 <td></td>
-<td>kVarh</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Energy unit</td>
 <td>CALCULATE:EM01:0001:TXUNIT</td>
 <td></td>
-<td>MVarh,kVarh,Varh</td>
+<td>MWh,kWh,Wh</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -2222,7 +2222,7 @@
 <td>0 / 1e+07</td>
 <td></td>
 <td>DOUBLE</td>
-<td>kVarh</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Mean power since last start</td>
@@ -2230,7 +2230,7 @@
 <td></td>
 <td></td>
 <td></td>
-<td>kVar</td>
+<td>kW</td>
 </tr>
 <tr>
 <td>Measurement time</td>
@@ -2252,7 +2252,7 @@
 <td>Ref input</td>
 <td>CALCULATE:EM01:0001:REFSOURCE</td>
 <td></td>
-<td>Q AC</td>
+<td>P AC</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -2286,7 +2286,7 @@
 <td>0 / 1e+07</td>
 <td></td>
 <td>DOUBLE</td>
-<td>kVarh</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Start/stop measurement (start=1, stop=0)</td>
