@@ -34,9 +34,13 @@ jobs:
       - name: Checkout git
         uses: actions/checkout@v4
 
-      - name: Commit scpi-docs
+      - name: Install packages
         run: |
           pip3 install mdutils
+          dnf install zip -y
+
+      - name: Commit scpi-docs
+        run: |
           git config --global user.name 'gitbot'
           git config --global user.email 'gitbot@noreply.de'
 
