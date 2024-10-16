@@ -41,6 +41,7 @@ jobs:
           git config --global user.email 'gitbot@noreply.de'
 
           mkdir -p scpi-documentation/archive
+          rm scpi-documentation/*.html
           cp -r $HOME/html-docs/* scpi-documentation
           if [ -f "scpi-documentation/archive/${{ github.event.inputs.version}}.zip" ]; then
             rm scpi-documentation/archive/${{ github.event.inputs.version}}.zip
