@@ -4,7 +4,7 @@ zenux-data
 
 
 This is a set of documents describing SCPI interface on MT310s2 and COM5003 devices.  
-These documents are created with operating system version: **release-4.7.0**
+These documents are created with operating system version: **release-4.7.1**
 ## SCPI Interface Descriptions
 
 
@@ -25,6 +25,7 @@ Given below are links to the most recent versions of these documents:
 
 ### Previous versions
   
+- [release-4.7.0](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.7.0.tar.xz)  
 - [release-4.6.22](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.6.22.tar.xz)  
 - [release-4.6.21](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.6.21.tar.xz)  
 - [release-4.6.20](https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/release-4.6.20.tar.xz)  
