@@ -35,13 +35,13 @@ def parseSessionNamesJson(jsonFile):
     return mtmap, commap
 
 def sort_by_release_number(s):
-    numb = (s.split('-')[1]).replace('.tar.xz', '')
+    numb = (s.split('-')[1]).replace('.zip', '')
     return [int(c) for c in numb.split('.')]
 
 def getArchiveEntries(dir):
     archives = list()
     for x in os.listdir(dir):
-        if x.endswith(".tar.xz"):
+        if x.endswith(".zip"):
             archives.append(x)
     archivesSorted = sorted(archives, key=sort_by_release_number, reverse=True)
     return archivesSorted
@@ -73,7 +73,7 @@ newReadMe.new_line('')
 newReadMe.new_header(level=3, title='Previous versions', add_table_of_contents="n")
 archives = getArchiveEntries("scpi-documentation/archive/")
 for file in archives:
-    releaseVersion = file.replace('.tar.xz', '')
+    releaseVersion = file.replace('.zip', '')
     newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://zeragmbh.github.io/zenux-data/scpi-documentation/archive/' + file, text=releaseVersion))
 newReadMe.new_line('')
 

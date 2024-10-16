@@ -42,11 +42,11 @@ jobs:
 
           mkdir -p scpi-documentation/archive
           cp -r $HOME/html-docs/* scpi-documentation
-          if [ -f "scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz" ]; then
-            rm scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz
+          if [ -f "scpi-documentation/archive/${{ github.event.inputs.version}}.zip" ]; then
+            rm scpi-documentation/archive/${{ github.event.inputs.version}}.zip
           fi
           python3 updateReadMe.py --ZenuxVersion ${{ github.event.inputs.version}} --SessionNamesJson $HOME/SessionNamesMapping.json
-          tar -cJf scpi-documentation/archive/${{ github.event.inputs.version}}.tar.xz scpi-documentation/*.html
+          zip scpi-documentation/archive/${{ github.event.inputs.version}}.zip scpi-documentation/*.html
 
           git add .
           git commit -sm "Update scpi-docs for Zenux version ${{ github.event.inputs.version}}"
