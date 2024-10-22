@@ -1,5 +1,5 @@
 <html>
-<title>COM5003 SCPI commands</title>
+<title>COM5003 - Changing energy direction session - SCPI commands</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>COM5003 SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>16-Oct-2024</b></i></footer><script>
+    </svg>COM5003 - Changing energy direction session - SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>22-Oct-2024</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.7.1</b>.</p>
+<p>This document was created with operating system version: <b>release-4.7.2</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -603,6 +603,25 @@
 </table>
 </div>
 <h2 id="PowerMeasurement">7.2 Power measurement</h2>
+<p><html>
+<body>
+    <p>
+        Each power module provides four values. Values with numbered indices are phase values and value with index ending 'S' is a sum value.<br>
+        Three power modules are available:
+        <ul>
+            <li>
+                <b>Power 1 </b> module provides active power. MEAS:POW1? gives all of these values.
+            </li>
+            <li>
+                <b>Power 2 </b> module provides reactive power. MEAS:POW2? gives all of these values.
+            </li>
+            <li>
+                <b>Power 3 </b> module provides apparent power. MEAS:POW3? gives all of these values.
+            </li>
+        </ul>
+    </p>
+</body>
+</html></p>
 <h3>Power 1</h3>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
@@ -825,156 +844,6 @@
 <td>Actual power value sum all phases</td>
 <td>MEASURE:POW3:SS?</td>
 <td>VA</td>
-</tr>
-</table>
-</div>
-<h3>Power 4</h3>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Configuration</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI path</th>
-<th>Min / Max</th>
-<th>Valid strings</th>
-<th>Data Type</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW4:MMODE</td>
-<td></td>
-<td>4LS</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
-<td>Integration period</td>
-<td>CONFIGURATION:POW4:TPERIOD</td>
-<td>5 / 5000</td>
-<td></td>
-<td>INTEGER</td>
-<td>period</td>
-</tr>
-<tr>
-<td>Active phases selection mask</td>
-<td>CONFIGURATION:POW4:MEASMODEPHASESELECT</td>
-<td></td>
-<td>111</td>
-<td>STRING</td>
-<td></td>
-</tr>
-</table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable">
-<tr><th>SCPI query</th></tr>
-<tr><td>CONFIGURATION:POW4:MMODE:CATALOG?</td></tr>
-</table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Values</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI query</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>Actual power value U1/I1</td>
-<td>MEASURE:POW4:S1?</td>
-<td>VA</td>
-</tr>
-<tr>
-<td>Actual power value U2/I2</td>
-<td>MEASURE:POW4:S2?</td>
-<td>VA</td>
-</tr>
-<tr>
-<td>Actual power value U3/I3</td>
-<td>MEASURE:POW4:S3?</td>
-<td>VA</td>
-</tr>
-<tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW4:SS?</td>
-<td>VA</td>
-</tr>
-</table>
-</div>
-<h3>Power 5</h3>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Configuration</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI path</th>
-<th>Min / Max</th>
-<th>Valid strings</th>
-<th>Data Type</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW5:MMODE</td>
-<td></td>
-<td>4LB</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
-<td>Integration time</td>
-<td>CONFIGURATION:POW5:TINTEGRATION</td>
-<td>1 / 100</td>
-<td></td>
-<td>DOUBLE</td>
-<td>s</td>
-</tr>
-<tr>
-<td>Active phases selection mask</td>
-<td>CONFIGURATION:POW5:MEASMODEPHASESELECT</td>
-<td></td>
-<td>111</td>
-<td>STRING</td>
-<td></td>
-</tr>
-</table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Catalog</b></p>
-<table class="DataTable">
-<tr><th>SCPI query</th></tr>
-<tr><td>CONFIGURATION:POW5:MMODE:CATALOG?</td></tr>
-</table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Values</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI query</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>Actual power value U1/I1</td>
-<td>MEASURE:POW5:Q1?</td>
-<td>Var</td>
-</tr>
-<tr>
-<td>Actual power value U2/I2</td>
-<td>MEASURE:POW5:Q2?</td>
-<td>Var</td>
-</tr>
-<tr>
-<td>Actual power value U3/I3</td>
-<td>MEASURE:POW5:Q3?</td>
-<td>Var</td>
-</tr>
-<tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW5:QS?</td>
-<td>Var</td>
 </tr>
 </table>
 </div>
@@ -2057,7 +1926,7 @@
 <td>REF input</td>
 <td>CALCULATE:EC01:0001:REFSOURCE</td>
 <td></td>
-<td>+P,P,-P</td>
+<td>+P,-P,P</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -2362,7 +2231,7 @@
 <td>REF input</td>
 <td>CALCULATE:EC01:0002:REFSOURCE</td>
 <td></td>
-<td>+P,P,-P</td>
+<td>+P,-P,P</td>
 <td>STRING</td>
 <td></td>
 </tr>
