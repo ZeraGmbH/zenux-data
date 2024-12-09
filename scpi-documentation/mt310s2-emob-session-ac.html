@@ -1,5 +1,5 @@
 <html>
-<title>MT310s2 - EMOB AC session - SCPI commands</title>
+<title>SCPI commands MT310s2 - EMOB AC session</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>MT310s2 - EMOB AC session - SCPI commands<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>22-Oct-2024</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - EMOB AC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>09-Dec-2024</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.7.2</b>.</p>
+<p>This document was created with operating system version: <b>release-4.7.3</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -370,6 +370,12 @@
 <td>Default,EMOB AC,EMOB DC,DC: 4*Voltage / 1*Current</td>
 <td>STRING</td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </table></div>
 <h1 id="ScpiStandardCmds">6. Standard SCPI commands</h1>
 <div class="DataTableDiv"><table class="DataTable">
@@ -558,58 +564,113 @@
 <th>Unit</th>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UL1?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U1?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UL2?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UL3?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/phase</td>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U3?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/phase / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UL1-UL2?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/phase</td>
+<td>Actual value phase/phase / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U1U2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/phase / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UL3-UL2?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/phase</td>
+<td>Actual value phase/phase / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U3U2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/phase / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UL3-UL1?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value</td>
+<td>Actual value phase/phase / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U3U1?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
 <td>MEASURE:DFT1:IL1?</td>
 <td>A</td>
 </tr>
 <tr>
-<td>Actual value</td>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I1?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
 <td>MEASURE:DFT1:IL2?</td>
 <td>A</td>
 </tr>
 <tr>
-<td>Actual value</td>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I2?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
 <td>MEASURE:DFT1:IL3?</td>
 <td>A</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral</td>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I3?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
 <td>MEASURE:DFT1:UAUX?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value</td>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U4?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
 <td>MEASURE:DFT1:IAUX?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I4?</td>
 <td>A</td>
 </tr>
 <tr>
@@ -655,7 +716,7 @@
 <td>Measuring mode</td>
 <td>CONFIGURATION:POW1:MMODE</td>
 <td></td>
-<td>4LW</td>
+<td>4LW,2LW</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -687,7 +748,7 @@
 <td>Active phases selection mask</td>
 <td>CONFIGURATION:POW1:MEASMODEPHASESELECT</td>
 <td></td>
-<td>111</td>
+<td>000,100,010,110,001,101,011,111</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -746,7 +807,7 @@
 <td>Measuring mode</td>
 <td>CONFIGURATION:POW2:MMODE</td>
 <td></td>
-<td>4LB</td>
+<td>4LB,2LB</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -778,7 +839,7 @@
 <td>Active phases selection mask</td>
 <td>CONFIGURATION:POW2:MEASMODEPHASESELECT</td>
 <td></td>
-<td>111</td>
+<td>000,100,010,110,001,101,011,111</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -837,7 +898,7 @@
 <td>Measuring mode</td>
 <td>CONFIGURATION:POW3:MMODE</td>
 <td></td>
-<td>4LS</td>
+<td>4LS,2LS</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -869,7 +930,7 @@
 <td>Active phases selection mask</td>
 <td>CONFIGURATION:POW3:MEASMODEPHASESELECT</td>
 <td></td>
-<td>111</td>
+<td>000,100,010,110,001,101,011,111</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -1830,30 +1891,6 @@
 <td></td>
 </tr>
 <tr>
-<td>Current measurement: Duration</td>
-<td>CALCULATE:EC01:0001:MMEASTIME</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Current measurement: End time (dd-MM-yyyy  HH:mm:ss)</td>
-<td>CALCULATE:EC01:0001:ENDTIME</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Current measurement: Start time (dd-MM-yyyy  HH:mm:ss)</td>
-<td>CALCULATE:EC01:0001:STRTTIME</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>DUT constant</td>
 <td>CALCULATE:EC01:0001:DUTCONSTANT</td>
 <td>1e-06 / 1e+20</td>
@@ -1928,6 +1965,30 @@
 <tr>
 <td>Evaluation last measurement</td>
 <td>CALCULATE:EC01:0001:RATING</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last measurement (sequence): End time (dd-MM-yyyy HH:mm:ss)</td>
+<td>CALCULATE:EC01:0001:ENDTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last measurement (sequence): Start time (dd-MM-yyyy HH:mm:ss)</td>
+<td>CALCULATE:EC01:0001:STRTTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last measurement: Duration [ms]</td>
+<td>CALCULATE:EC01:0001:MMEASTIME</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2167,6 +2228,30 @@
 <td></td>
 <td>DOUBLE</td>
 <td>kWh</td>
+</tr>
+<tr>
+<td>Last measurement: Duration [ms]</td>
+<td>CALCULATE:EM01:0001:MMEASTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last measurement: End time (dd-MM-yyyy HH:mm:ss)</td>
+<td>CALCULATE:EM01:0001:ENDTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Last measurement: Start time (dd-MM-yyyy HH:mm:ss)</td>
+<td>CALCULATE:EM01:0001:STRTTIME</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>Mean power since last start</td>
