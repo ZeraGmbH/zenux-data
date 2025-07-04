@@ -158,13 +158,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands COM5003 - Default session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>06-Jun-2025</b></i></footer><script>
+    </svg>SCPI commands COM5003 - Default session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>04-Jul-2025</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.8.4</b>.</p>
+<p>This document was created with operating system version: <b>release-4.8.5</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -723,6 +723,14 @@
 <td></td>
 </tr>
 <tr>
+<td>Nominal frequency</td>
+<td>CONFIGURATION:POW1:NOMINAL_FREQ</td>
+<td>10000 / 200000</td>
+<td></td>
+<td>INTEGER</td>
+<td>Hz</td>
+</tr>
+<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW1:TINTEGRATION</td>
 <td>1 / 100</td>
@@ -814,6 +822,14 @@
 <td></td>
 </tr>
 <tr>
+<td>Nominal frequency</td>
+<td>CONFIGURATION:POW2:NOMINAL_FREQ</td>
+<td>10000 / 200000</td>
+<td></td>
+<td>INTEGER</td>
+<td>Hz</td>
+</tr>
+<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW2:TINTEGRATION</td>
 <td>1 / 100</td>
@@ -884,7 +900,7 @@
 <td>Measuring mode</td>
 <td>CONFIGURATION:POW3:MMODE</td>
 <td></td>
-<td>4LS,4LSg,2LS,2LSg</td>
+<td>4LS,4LSg,3LS,3LSg,2LS,2LSg</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -903,6 +919,14 @@
 <td></td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td>Nominal frequency</td>
+<td>CONFIGURATION:POW3:NOMINAL_FREQ</td>
+<td>10000 / 200000</td>
+<td></td>
+<td>INTEGER</td>
+<td>Hz</td>
 </tr>
 <tr>
 <td>Integration time</td>
@@ -975,7 +999,7 @@
 <td>Measuring mode</td>
 <td>CONFIGURATION:POW4:MMODE</td>
 <td></td>
-<td>4LW,3LW,2LW,4LB,4LBK,3LB,2LB,4LS,4LSg,2LS,2LSg,QREF</td>
+<td>4LW,3LW,2LW,4LB,4LBK,3LB,2LB,4LS,4LSg,3LS,3LSg,2LS,2LSg,QREF</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -994,6 +1018,14 @@
 <td></td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td>Nominal frequency</td>
+<td>CONFIGURATION:POW4:NOMINAL_FREQ</td>
+<td>10000 / 200000</td>
+<td></td>
+<td>INTEGER</td>
+<td>Hz</td>
 </tr>
 <tr>
 <td>Fixed frequency output mode (QREF): frequency value</td>
