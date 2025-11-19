@@ -69,8 +69,16 @@ for i in commap :
     newReadMe.new_line('- ' + newReadMe.new_inline_link(link='https://ZeraGmbH.github.io/zenux-data/scpi-documentation/' + i, text=commap[i] + ' session'))
 newReadMe.new_line('')
 
+newReadMe.new_header(level=3, title='Change info', add_table_of_contents="n")
+newReadMe.new_line('For details on changes in SCPI check ' +
+                   newReadMe.new_inline_link(link='https://ZeraGmbH.github.io/zenux-data/scpi-documentation/change-info.html', text='here') +
+                   '.')
+newReadMe.new_line('')
+
 #'Previous versions'
 newReadMe.new_header(level=3, title='Previous versions', add_table_of_contents="n")
+newReadMe.new_line('Following are the links to previously archived versions. When clicked upon, a zip file will be downloaded.')
+newReadMe.new_line('It is important to maintain the folder structure while unzipping this file.')
 archives = getArchiveEntries("scpi-documentation/archive/")
 for file in archives:
     releaseVersion = file.replace('.zip', '')
