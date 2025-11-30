@@ -2,147 +2,7 @@
 <title>SCPI commands MT310s2 - Default session</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-      :root {
-      /*default: light-theme*/
-          --color-bg: #fbf8f8;
-          --color-fg: black;
-          --color-table-tr: #dddddd;
-          --color-table-tr-btm: #f3f3f3;
-          --color-table-border: white;
-          --color-table-border-btm: #206040;
-          --color-table-border-thickness: 2px;
-      }
-      .dark-theme {
-          --color-bg: #484343;
-          --color-fg: white;
-          --color-table-tr: #666565;
-          --color-table-tr-btm: #666565;
-          --color-table-border: #808080;
-          --color-table-border-btm: #808080;
-      }
-      body {
-          font-family: Verdana, sans-serif;
-          color: var(--color-fg);
-          background-color: var(--color-bg);
-          margin: 0px;
-          padding: 0px;
-      }
-      .content {
-          padding: 20px;
-      }
-      html {
-          scroll-padding-top: 4rem;
-      }
-      h1 {
-          color: #25915b;
-          font-weight: bold;
-          padding-bottom: 10px;
-          padding-top: 30px;
-      }
-      h2 {
-          color: #25915b;
-          font-weight: bold;
-      }
-      h3 {
-          color: #25915b;
-          font-weight: bold;
-      }
-
-      /*Table of contents*/
-      .toc {
-          padding-bottom: 10px;
-      }
-      .toc a {
-          color: var(--color-fg);
-          text-decoration: none;
-          border-bottom: 1px solid;
-      }
-      .toc ul li {
-          font-size: 18;
-          line-height: 1.5;
-          list-style-type: none;
-      }
-
-      /*SCPI Commands tables*/
-      .DataTableDiv {
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-          padding: 10px 0 15px 15px;
-          margin-top: 15px;
-          margin-bottom: 15px;
-      }  
-      .DataTableName {
-          font-size: large;
-      }
-      .DataTable {
-          border-collapse: collapse;
-          font-size: medium;
-          min-width: 300px;
-          text-align: left;
-          border: thin solid var(--color-table-border);
-      }
-      .DataTable tr th{
-          background-color: #206040;
-          color: #ffffff;
-          padding: 12px 15px;
-      }
-      .DataTable tr td{
-          padding: 12px 15px;
-      }
-      .DataTable tbody tr:nth-of-type(odd) {
-          background-color: var(--color-table-tr)
-      }
-      .DataTable tbody tr:last-of-type {
-          border-bottom: var(--color-table-border-thickness, thin) solid var(--color-table-border-btm);
-      }
-
-      /*header*/
-      .logo {
-          height: 50px;
-          margin-top: 5px;
-          margin-bottom: 5px;
-      }
-      header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: #c4c4c4;
-          position: sticky;
-          color: black;
-          top: 0;
-          font-weight: bold;
-          font-size: 200%;
-          font-family: "Ubuntu", Arial, Helvetica, sans-serif;
-      }
-      .toggleThemeButton {
-          border: 1px solid var(--color-fg);
-          padding: .5rem;
-          background: var(--color-fg);
-          border-radius: 10px;
-          color: var(--color-bg);
-          margin-right: .5rem;
-          cursor: pointer;
-      }
-      .toggleThemeButton:hover {
-          opacity: 0.7;
-      }
-      @media print {
-          #toggleThemeButton {
-          display: none;
-          }
-      }
-
-      footer {
-          position: fixed;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          background-color: #c4c4c4;
-          color: black;
-          text-align: left;
-          font-size: 75%;
-      }
-    </style>
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 <header><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo" version="1.1" id="Ebene_1" x="0px" y="0px" viewBox="0 0 243.8 70.9" style="enable-background:new 0 0 243.8 70.9;" xml:space="preserve">
@@ -158,13 +18,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - Default session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>16-Sep-2025</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - Default session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>30-Nov-2025</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.8.11</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.0</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -190,6 +50,7 @@
 </ul>
 <li><a href="#Ranges">8. Ranges</a></li>
 <li><a href="#ErrorCalculators">9. Comparison Measurements</a></li>
+<li><a href="#EMOB">10. EMOB</a></li>
 </ul>
 </div>
 <h1 id="ScpiStandard">1. SCPI Standard</h1>
@@ -276,7 +137,7 @@
 <td>STATUS:DEV1:ACCUSOC?</td>
 </tr>
 <tr>
-<td>Accumulator state of charge</td>
+<td>Accumulator status</td>
 <td>STATUS:DEV1:ACCUSTATUS?</td>
 </tr>
 <tr>
@@ -1006,7 +867,7 @@
 <td>Measuring mode</td>
 <td>CONFIGURATION:POW4:MMODE</td>
 <td></td>
-<td>4LW,3LW,2LW,4LB,3LB,2LB,4LS,4LSg,2LS,2LSg</td>
+<td>4LW,3LW,2LW,4LB,3LB,2LB,4LS,4LSg,2LS,2LSg,QREF</td>
 <td>STRING</td>
 <td></td>
 </tr>
@@ -1033,6 +894,14 @@
 <td></td>
 <td>INTEGER</td>
 <td>Hz</td>
+</tr>
+<tr>
+<td>Fixed frequency output mode (QREF): frequency value</td>
+<td>CONFIGURATION:POW4:FIXFREQ</td>
+<td>0.001 / 200</td>
+<td></td>
+<td>DOUBLE</td>
+<td>kHz</td>
 </tr>
 <tr>
 <td>Integration time</td>
@@ -1975,7 +1844,7 @@
 </tr>
 </table>
 </div>
-<h1 id="SamplingConfigs">7.11 Sampling/PLL configurations</h1>
+<h2 id="SamplingConfigs">7.11 Sampling/PLL configurations</h2>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>Description</th>
@@ -2677,14 +2546,6 @@
 <th>Unit</th>
 </tr>
 <tr>
-<td>Activate EMOB-pushbutton (push=1)</td>
-<td>CALCULATE:EM01:0001:PBPRESS</td>
-<td>0 / 1</td>
-<td></td>
-<td>INTEGER</td>
-<td></td>
-</tr>
-<tr>
 <td>Energy since last start</td>
 <td>CALCULATE:EM01:0001:ENERGY</td>
 <td></td>
@@ -3014,6 +2875,48 @@
 <td></td>
 <td>INTEGER</td>
 <td></td>
+</tr>
+</table></div>
+<h1 id="EMOB">10. EMOB</h1>
+<p><html>
+<body>
+    <p>These are the commands to be used with EMOB suitcases.</p>
+    <ul>
+        <li>
+            <p><b>EMOB lock state query:</b> It is recommended to use this query only when measurement is not running.<br></p>
+        </li>
+        <li>
+            <p>If there is only one EMOB controller connected to the device, then parameter to EMOB SCPI commands is optional.
+                When no parameter is specified, device will automatically work with the connected EMOB controller. <br></p>
+        </li>
+        <li>
+            <p>If there are multiple EMOB controllers connected to the device, then parameter to EMOB SCPI commands is a must.
+                This parameter indicates to which EMOB controller the SCPI command is directed to.<br></p>
+        </li>
+    </ul>
+</body>
+</html></p>
+<div class="DataTableDiv"><table class="DataTable">
+<tr>
+<th>Description</th>
+<th>SCPI path</th>
+<th>SCPI command type</th>
+<th>Valid strings</th>
+<th>Data Type</th>
+</tr>
+<tr>
+<td>EMOB plug lock state: 0:unknown 1:open 2:locking 3:locked 4:error</td>
+<td>EMOB:HOTP1:EMLOCKSTATE</td>
+<td>Query</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Press EMOB-pushbutton</td>
+<td>EMOB:HOTP1:PBPRESS</td>
+<td>Command+Par</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
 </tr>
 </table></div>
 </div>
