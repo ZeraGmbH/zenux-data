@@ -18,13 +18,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - EMOB DC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>30-Nov-2025</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - EMOB DC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>04-Dec-2025</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.0</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.1</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -554,6 +554,25 @@
 <p><html>
 <body>
     <p>Only one power module (Power 4) is available which provides DC power from phase 1.</p>
+</body>
+</html><html>
+<body>
+    <p>
+        <b>Measuring modes:</b><br>
+        The measuring mode selection strings have following meanings -
+        <ul>
+            <li>4LW means 4WA (4-wire active power)</li>
+            <li>3LW means 3WA (3-wire active power)</li>
+            <li>2LW means 2WA (2-wire active power)</li>
+            <li>4LB means 4WR (4-wire reactive power)</li>
+            <li>3LB means 3WR (3-wire reactive power)</li>
+            <li>2LB means 2WR (2-wire reactive power)</li>
+            <li>4LS means 4WAP (4-wire apparent power)</li>
+            <li>4LSg means 4WAPG (4-wire apparent power geometric)</li>
+            <li>2LS means 2WAP (2-wire apparent power)</li>
+            <li>2LSg means 2WAPG (2-wire apparent power geometric)</li>
+        </ul>
+    </p>
 </body>
 </html></p>
 <h3>Power 4</h3>
@@ -2021,6 +2040,20 @@
 <th>SCPI command type</th>
 <th>Valid strings</th>
 <th>Data Type</th>
+</tr>
+<tr>
+<td>Clear EMOB Errors</td>
+<td>EMOB:HOTP1:CLEARERROR</td>
+<td>Command+Par</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>EMOB Errors bit position: 1::Supply lost 2:Device error 3:Sensor error 4:Cable error 5:Overcurrent 6:Overtemperature7:locking error 8:Problem at neighbour EMOB</td>
+<td>EMOB:HOTP1:ERROR</td>
+<td>Query</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
 </tr>
 <tr>
 <td>EMOB plug lock state: 0:unknown 1:open 2:locking 3:locked 4:error</td>
