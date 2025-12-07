@@ -18,13 +18,13 @@
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>04-Dec-2025</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>07-Dec-2025</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.1</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.2</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -2326,14 +2326,14 @@
 <td>STRING</td>
 </tr>
 <tr>
-<td>EMOB Errors bit position: 1::Supply lost 2:Device error 3:Sensor error 4:Cable error 5:Overcurrent 6:Overtemperature7:locking error 8:Problem at neighbour EMOB</td>
+<td>EMOB Errors bits:<br/>Bit0: Supply lost<br/>Bit1: Device error<br/>Bit2: Sensor error<br/>Bit3: Cable error<br/>Bit4: Overcurrent<br/>Bit5: Overtemperature<br/>Bit6: locking error<br/>Bit7: Problem at neighbour EMOB</td>
 <td>EMOB:HOTP1:ERROR</td>
 <td>Query</td>
 <td>IL1,IL2,IL3,IAUX</td>
 <td>STRING</td>
 </tr>
 <tr>
-<td>EMOB plug lock state: 0:unknown 1:open 2:locking 3:locked 4:error</td>
+<td>EMOB plug lock state:<br/>0:unknown<br/>1:open<br/>2:locking<br/>3:locked<br/>4:error</td>
 <td>EMOB:HOTP1:EMLOCKSTATE</td>
 <td>Query</td>
 <td>IL1,IL2,IL3,IAUX</td>
