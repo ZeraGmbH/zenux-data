@@ -54,7 +54,7 @@ jobs:
             rm scpi-documentation/archive/${{ github.event.inputs.version}}.zip
           fi
           python3 updateReadMe.py --ZenuxVersion ${{ github.event.inputs.version}} --SessionNamesJson $HOME/SessionNamesMapping.json
-          zip -r scpi-documentation/archive/${{ github.event.inputs.version}}.zip scpi-documentation/*.html scpi-documentation/css/*.css
+          zip -r scpi-documentation/archive/${{ github.event.inputs.version}}.zip scpi-documentation/*.html
 
           git add .
           git commit -sm "Update scpi-docs for Zenux version ${{ github.event.inputs.version}}"
