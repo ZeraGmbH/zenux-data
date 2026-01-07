@@ -156,13 +156,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands COM5003 - Changing energy direction session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>16-Dec-2025</b></i></footer><script>
+    </svg>SCPI commands COM5003 - Changing energy direction session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>07-Jan-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.4</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.5</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -1767,9 +1767,9 @@ footer {
             </p>
         </li>
         <li>
-<b>REF source:</b>
+<b>Reference input: Power module name (REFSOURCE):</b>
             <p>
-                The source of the reference meter (the device itself) can be queried and selected.
+                The reference power source (powermodule) can be queried and selected.
                 Valid parameters are P (active power), Q (reactive power) and S (apparent power).
             </p>
         </li>
@@ -1821,6 +1821,14 @@ footer {
 <th>Valid strings</th>
 <th>Data Type</th>
 <th>Unit</th>
+</tr>
+<tr>
+<td>Actual frequency input (internal)</td>
+<td>CALCULATE:EC01:0001:REFFREQINPUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>Calculate DUT constant to get ~0% error</td>
@@ -1999,14 +2007,6 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>REF input</td>
-<td>CALCULATE:EC01:0001:REFSOURCE</td>
-<td></td>
-<td>+P,-P,P</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
 <td>REF pulses for 0% error - set automatically</td>
 <td>CALCULATE:EC01:0001:TARGET</td>
 <td>1 / 4294967295</td>
@@ -2015,11 +2015,11 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Reference frequency input to find power module</td>
-<td>CALCULATE:EC01:0001:REFFREQINPUT</td>
+<td>Reference input: Power module name</td>
+<td>CALCULATE:EC01:0001:REFSOURCE</td>
 <td></td>
-<td></td>
-<td></td>
+<td>+P,-P,P</td>
+<td>STRING</td>
 <td></td>
 </tr>
 <tr>
@@ -2047,7 +2047,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Start/stop measurement (start=1, stop=0)</td>
+<td>Start/stop measurement:<br/>0: stop<br/>1: start</td>
 <td>CALCULATE:EC01:0001:START</td>
 <td>0 / 1</td>
 <td></td>
@@ -2055,7 +2055,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Status: 0:Idle 1:Waiting for first pulse 2:Started 4:Ready 8:Aborted</td>
+<td>Status:<br/>0: Idle<br/>1: Waiting for first pulse<br/>2: Started<br/>4: Ready<br/>8: Aborted</td>
 <td>CALCULATE:EC01:0001:STATUS</td>
 <td></td>
 <td></td>
@@ -2134,6 +2134,14 @@ footer {
 <th>Valid strings</th>
 <th>Data Type</th>
 <th>Unit</th>
+</tr>
+<tr>
+<td>Actual frequency input (internal)</td>
+<td>CALCULATE:EC01:0002:REFFREQINPUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>Calculate DUT constant to get ~0% error</td>
@@ -2312,14 +2320,6 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>REF input</td>
-<td>CALCULATE:EC01:0002:REFSOURCE</td>
-<td></td>
-<td>+P,-P,P</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
 <td>REF pulses for 0% error - set automatically</td>
 <td>CALCULATE:EC01:0002:TARGET</td>
 <td>1 / 4294967295</td>
@@ -2328,11 +2328,11 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Reference frequency input to find power module</td>
-<td>CALCULATE:EC01:0002:REFFREQINPUT</td>
+<td>Reference input: Power module name</td>
+<td>CALCULATE:EC01:0002:REFSOURCE</td>
 <td></td>
-<td></td>
-<td></td>
+<td>+P,-P,P</td>
+<td>STRING</td>
 <td></td>
 </tr>
 <tr>
@@ -2360,7 +2360,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Start/stop measurement (start=1, stop=0)</td>
+<td>Start/stop measurement:<br/>0: stop<br/>1: start</td>
 <td>CALCULATE:EC01:0002:START</td>
 <td>0 / 1</td>
 <td></td>
@@ -2368,7 +2368,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Status: 0:Idle 1:Waiting for first pulse 2:Started 4:Ready 8:Aborted</td>
+<td>Status:<br/>0: Idle<br/>1: Waiting for first pulse<br/>2: Started<br/>4: Ready<br/>8: Aborted</td>
 <td>CALCULATE:EC01:0002:STATUS</td>
 <td></td>
 <td></td>
