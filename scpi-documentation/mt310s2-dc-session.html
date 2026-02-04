@@ -1,24 +1,28 @@
 <html>
-<title>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session</title>
+<title>SCPI commands MT310s2 - DC: 4<i>Voltage / 1</i>Current session</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>:root {
-/*default: light-theme*/
-    --color-bg: #fbf8f8;
-    --color-fg: black;
-    --color-table-tr: #dddddd;
-    --color-table-tr-btm: #f3f3f3;
-    --color-table-border: white;
-    --color-table-border-btm: #206040;
+    --color-green: #206040;
     --color-table-border-thickness: 2px;
+
+/*default: light-theme*/
+    --color-bg: #f8fafc;
+    --color-fg: black;
+    --color-header-footer: #f0f2f3;
+    --color-table-tr: #e9ebec;
+    --color-table-tr-btm: #f3f3f3;
+    --color-table-border: var(--color-bg);
+    --color-table-border-btm: var(--color-green);
 }
 .dark-theme {
-    --color-bg: #484343;
+    --color-bg: #09090b;
     --color-fg: white;
-    --color-table-tr: #666565;
+    --color-header-footer: #36363A;
+    --color-table-tr: #24242C;
     --color-table-tr-btm: #666565;
-    --color-table-border: #808080;
-    --color-table-border-btm: #808080;
+    --color-table-border: var(--color-bg);
+    --color-table-border-btm: var(--color-green);
 }
 body {
     font-family: Verdana, sans-serif;
@@ -36,16 +40,17 @@ html {
 h1 {
     color: #25915b;
     font-weight: bold;
-    padding-bottom: 10px;
-    padding-top: 30px;
+    margin-top: 50px;
 }
 h2 {
     color: #25915b;
     font-weight: bold;
+    margin-top: 40px;
 }
 h3 {
     color: #25915b;
     font-weight: bold;
+    margin-top: 30px;
 }
 
 /*Table of contents*/
@@ -65,9 +70,9 @@ h3 {
 
 /*SCPI Commands tables*/
 .DataTableDiv {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    padding: 10px 0 15px 15px;
-    margin-top: 15px;
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);*/
+    /*padding: 10px 0 15px 15px;*/
+    /*margin-top: 15px;*/
     margin-bottom: 15px;
 }  
 .DataTableName {
@@ -81,7 +86,7 @@ h3 {
     border: thin solid var(--color-table-border);
 }
 .DataTable tr th{
-    background-color: #206040;
+    background-color: var(--color-green);
     color: #ffffff;
     padding: 12px 15px;
 }
@@ -105,9 +110,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #c4c4c4;
+    background-color: var(--color-header-footer);
     position: sticky;
-    color: black;
+    color: var(--color-fg);
     top: 0;
     font-weight: bold;
     font-size: 200%;
@@ -136,8 +141,8 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #c4c4c4;
-    color: black;
+    background-color: var(--color-header-footer);
+    color: var(--color-fg);
     text-align: left;
     font-size: 75%;
 }</style>
@@ -156,13 +161,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>07-Jan-2026</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - DC: 4<i>Voltage / 1</i>Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>04-Feb-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.5</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.6</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -365,7 +370,7 @@ footer {
 <tr>
 <td>Session name</td>
 <td>CONFIGURATION:SYST:NAMESESSION</td>
-<td>Default,EMOB AC,EMOB DC,DC: 4*Voltage / 1*Current</td>
+<td>Default,EMOB AC,EMOB DC,DC: 4<i>Voltage / 1</i>Current</td>
 <td>STRING</td>
 </tr>
 <tr>
@@ -1130,17 +1135,6 @@ footer {
         All vectors are pairs of real part and imaginary part separated by comma. <br>
         MEAS:FFT1? Reads out vectors for all available channels.
     </p>
-    <p>
-        Channel select strings are:<br><br>
-        <b>m0</b>: UL1<br>
-        <b>m1</b>: UL2<br>
-        <b>m2</b>: UL3<br>
-        <b>m3</b>: IL1<br>
-        <b>m4</b>: IL2<br>
-        <b>m5</b>: IL3<br>
-        <b>m6</b>: UAUX<br>
-        <b>m7</b>: IAUX<br>
-    </p>
 </body>
 </html></p>
 <div class="DataTableDiv">
@@ -1163,7 +1157,7 @@ footer {
 <td>s</td>
 </tr>
 <tr>
-<td>Reference channel</td>
+<td>Reference channel<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m0</b>: UL1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m1</b>: UL2<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m2</b>: UL3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m3</b>: IL1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m4</b>: IL2<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m5</b>: IL3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m6</b>: UAUX<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m7</b>: IAUX</td>
 <td>CONFIGURATION:FFT1:REFCHANNEL</td>
 <td></td>
 <td>m0,m1,m2,m3,m4,m5,m6,m7</td>
@@ -1513,21 +1507,6 @@ footer {
 </table>
 </div>
 <h2 id="OSCValues">7.6 Oscilloscope values</h2>
-<p><html>
-<body>
-    <p>
-        Channel select strings are:<br><br>
-        <b>m0</b>: UL1<br>
-        <b>m1</b>: UL2<br>
-        <b>m2</b>: UL3<br>
-        <b>m3</b>: IL1<br>
-        <b>m4</b>: IL2<br>
-        <b>m5</b>: IL3<br>
-        <b>m6</b>: UAUX<br>
-        <b>m7</b>: IAUX<br>
-    </p>
-</body>
-</html></p>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
 <table class="DataTable">
@@ -1540,7 +1519,7 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Reference channel</td>
+<td>Reference channel<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m0</b>: UL1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m1</b>: UL2<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m2</b>: UL3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m3</b>: IL1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m4</b>: IL2<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m5</b>: IL3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m6</b>: UAUX<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>m7</b>: IAUX</td>
 <td>CONFIGURATION:OSC1:REFCHANNEL</td>
 <td></td>
 <td>m0,m1,m2,m3,m4,m5,m6,m7</td>
@@ -1637,7 +1616,7 @@ footer {
         </ul>
     </p>
     <p>
-        <b>Note:</b> Values in 'Valid string' may vary. To get the current, use channel's 'Catalog' queries.
+        <b>Note:</b> Values in 'Valid strings' may vary. To get the current, use channel's 'Catalog' queries.
     </p>
 </body>
 </html></p>
@@ -1649,63 +1628,54 @@ footer {
 <th>SCPI path</th>
 <th>Valid strings</th>
 <th>Data Type</th>
-<th>Unit</th>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:UL1:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:UL2:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:UL3:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:IL1:RANGE</td>
 <td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:IL2:RANGE</td>
 <td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:IL3:RANGE</td>
 <td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:UAUX:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
-<td></td>
 </tr>
 <tr>
 <td>Channel's range</td>
 <td>SENSE:RNG1:IAUX:RANGE</td>
 <td>--</td>
 <td>STRING</td>
-<td></td>
 </tr>
 </table>
 </div>
@@ -1911,71 +1881,7 @@ footer {
 </table>
 </div>
 <h1 id="ErrorCalculators">9. Comparison Measurements</h1>
-<p><html>
-<body>
-    <p>
-        The following commands are available:
-    </p>
-    <ul>
-        <li>
-<b>Status:</b>
-            <p>
-                Querying the error calculators status will give the following result. For more details, refer to the
-                status line in the table below.<br>
-            </p>
-        </li>
-        <li>
-<b>Progress:</b>
-            <p>
-                When a measurement is running, its progress can be read. The value is between
-                0[%] and 100[%] .
-            </p>
-        </li>
-        <li>
-<b>Result:</b>
-            <p>
-                When the device is in READY state a valid result in [%] can be read.
-            </p>
-        </li>
-        <li>
-<b>Reference input: Power module name (REFSOURCE):</b>
-            <p>
-                The reference power source (powermodule) can be queried and selected.
-                Valid parameters are P (active power), Q (reactive power) and S (apparent power).
-            </p>
-        </li>
-        <li>
-<b>MRate:</b>
-            <p>
-                The number of scanning head impulses for meter error measurement can be queried
-                and set. Values can be up to 2<sup>32</sup> - 1.
-            </p>
-        </li>
-        <li>
-<b>DUT source:</b>
-            <p>
-                The source of the device under test can be queried and selected. Valid parameters are
-                <b>SC1</b> and <b>HK1</b>.
-            </p>
-        </li>
-        <li>
-<b>DUT constant:</b>
-            <p>
-                The meter constant of the device under test can be queried an set here. It's a floating point value.
-                For active power measurement the device assumes the unit 1/kwh, for reactive power 1/kVarh and
-                for apparent power 1/kVAh.
-            </p>
-        </li>
-        <li>
-<b>Start:</b>
-            <p>
-                With this command the measurement can be started and stopped as well.
-                Writing a 1 starts the measurement, writing a 0 stops the measurement.
-            </p>
-        </li>
-    </ul>
-</body>
-</html></p>
+<p></p>
 <h2>Pulse comparison</h2>
 <p><html>
 <body>
@@ -1994,15 +1900,7 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Actual frequency input (internal)</td>
-<td>CALCULATE:EC01:0001:REFFREQINPUT</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Calculate DUT constant to get ~0% error</td>
+<td>Calculate DUT constant:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Writing 1 calculates the DUT meter constant from last measurement.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Value read is 0</td>
 <td>CALCULATE:EC01:0001:AUTODUTCONSTANT</td>
 <td>0 / 1</td>
 <td></td>
@@ -2010,31 +1908,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>DUT constant</td>
-<td>CALCULATE:EC01:0001:DUTCONSTANT</td>
-<td>1e-06 / 1e+20</td>
-<td></td>
-<td>DOUBLE</td>
-<td></td>
-</tr>
-<tr>
-<td>DUT constant unit</td>
-<td>CALCULATE:EC01:0001:DCUNIT</td>
-<td></td>
-<td>I/kWh,Wh/I</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
-<td>DUT input</td>
-<td>CALCULATE:EC01:0001:DUTSOURCE</td>
-<td></td>
-<td>SC1,HK1</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
-<td>Enables/disable continuous measurement</td>
+<td>Continuous measurement:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: disabled<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: enabled</td>
 <td>CALCULATE:EC01:0001:CONTINUOUS</td>
 <td>0 / 1</td>
 <td></td>
@@ -2042,7 +1916,31 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Energy of last measurement</td>
+<td>DUT constant unit:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Valid values depend on power type selected:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Active power (P): 'I/kWh', 'Wh/I'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Reactive power (Q): 'I/kVarh', 'Varh/I'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Apparent power (S): 'I/kVAh', 'VAh/I'</td>
+<td>CALCULATE:EC01:0001:DCUNIT</td>
+<td></td>
+<td>I/kWh,Wh/I</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
+<td>DUT constant<br/>&nbsp;&nbsp;&nbsp;&nbsp;The meter constant of the device under test can be queried an set here.</td>
+<td>CALCULATE:EC01:0001:DUTCONSTANT</td>
+<td>1e-06 / 1e+20</td>
+<td></td>
+<td>DOUBLE</td>
+<td></td>
+</tr>
+<tr>
+<td>DUT input<br/>&nbsp;&nbsp;&nbsp;&nbsp;The source of the device under test can be queried and selected.</td>
+<td>CALCULATE:EC01:0001:DUTSOURCE</td>
+<td></td>
+<td>SC1,HK1</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
+<td>Energy of last measurement completed</td>
 <td>CALCULATE:EC01:0001:ENFINAL</td>
 <td></td>
 <td></td>
@@ -2082,14 +1980,6 @@ footer {
 <td>%</td>
 </tr>
 <tr>
-<td>Evaluation last measurement</td>
-<td>CALCULATE:EC01:0001:RATING</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>Last measurement (sequence): End time (dd-MM-yyyy HH:mm:ss)</td>
 <td>CALCULATE:EC01:0001:ENDTIME</td>
 <td></td>
@@ -2106,7 +1996,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Last measurement: Duration [ms]</td>
+<td>Last measurement Duration [ms]</td>
 <td>CALCULATE:EC01:0001:MMEASTIME</td>
 <td></td>
 <td></td>
@@ -2122,7 +2012,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Multiple measurements: Count stored</td>
+<td>Multiple measurements: Count stored<br/>&nbsp;&nbsp;&nbsp;&nbsp;Maximum storage count is limited to 400.<br/>&nbsp;&nbsp;&nbsp;&nbsp;=&gt; contiuous measurement count can exceed count stored</td>
 <td>CALCULATE:EC01:0001:MULCOUNT</td>
 <td></td>
 <td></td>
@@ -2146,7 +2036,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Multiple measurements: Seconds to wait between measurements</td>
+<td>Multiple measurements: Pause<br/>&nbsp;&nbsp;&nbsp;&nbsp;Seconds to wait between measurements</td>
 <td>CALCULATE:EC01:0001:MWAIT</td>
 <td>0 / 2147483</td>
 <td></td>
@@ -2154,7 +2044,7 @@ footer {
 <td>s</td>
 </tr>
 <tr>
-<td>Progress information</td>
+<td>Progress:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Progress of current measurement. Range is from 0 [%] to 100 [%].</td>
 <td>CALCULATE:EC01:0001:PROGRESS</td>
 <td></td>
 <td></td>
@@ -2178,15 +2068,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>REF pulses for 0% error - set automatically</td>
-<td>CALCULATE:EC01:0001:TARGET</td>
-<td>1 / 4294967295</td>
-<td></td>
-<td>INTEGER</td>
-<td></td>
-</tr>
-<tr>
-<td>Reference input: Power module name</td>
+<td>Reference input:<br/>&nbsp;&nbsp;&nbsp;&nbsp;The reference power source (powermodule) can be queried and selected.</td>
 <td>CALCULATE:EC01:0001:REFSOURCE</td>
 <td></td>
 <td>P 1,P 2,P 3,P AUX</td>
@@ -2202,8 +2084,16 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Result of last measurement</td>
-<td>CALCULATE:EC01:0001:RESULT</td>
+<td>Reference pulses expected for 0% error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Calculated automatically by:<br/>&nbsp;&nbsp;&nbsp;&nbsp;ReferencePulses = ReferenceConstant * NumberOfPulses / DUTConstant</td>
+<td>CALCULATE:EC01:0001:TARGET</td>
+<td>1 / 4294967295</td>
+<td></td>
+<td>INTEGER</td>
+<td></td>
+</tr>
+<tr>
+<td>Result evaluation:<br/>&nbsp;&nbsp;&nbsp;&nbsp;-1: unfinished<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: failed<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: passed</td>
+<td>CALCULATE:EC01:0001:RATING</td>
 <td></td>
 <td></td>
 <td></td>
@@ -2218,7 +2108,15 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Start/stop measurement:<br/>0: stop<br/>1: start</td>
+<td>Result value:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Error value in [%] of the last measurement completed.</td>
+<td>CALCULATE:EC01:0001:RESULT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Start/stop measurement:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: stop<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: start</td>
 <td>CALCULATE:EC01:0001:START</td>
 <td>0 / 1</td>
 <td></td>
@@ -2226,7 +2124,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Status:<br/>0: Idle<br/>1: Waiting for first pulse<br/>2: Started<br/>4: Ready<br/>8: Aborted</td>
+<td>Status:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: Idle<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: Waiting for first pulse<br/>&nbsp;&nbsp;&nbsp;&nbsp;2: Started<br/>&nbsp;&nbsp;&nbsp;&nbsp;4: Ready<br/>&nbsp;&nbsp;&nbsp;&nbsp;8: Aborted</td>
 <td>CALCULATE:EC01:0001:STATUS</td>
 <td></td>
 <td></td>
@@ -2239,7 +2137,7 @@ footer {
 <p><html>
 <body>
     <p>
-        Scale the DUT constant in case tranformers are used.<br>
+        Scale the DUT constant in case transformers are used.<br>
         A <b>Regular Expression (RegEx)</b> is used to validate the input parameters in these configurations.
         It is a way to describe a pattern. <a href="https://regex101.com/">https://regex101.com/</a> can be useful to get more information on RegEx.
     </p>
@@ -2301,12 +2199,20 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Actual frequency input (internal)</td>
-<td>CALCULATE:EM01:0001:REFFREQINPUT</td>
+<td>Energy register: End value</td>
+<td>CALCULATE:EM01:0001:T1INPUT</td>
+<td>0 / 1e+07</td>
 <td></td>
+<td>DOUBLE</td>
+<td>kWh</td>
+</tr>
+<tr>
+<td>Energy register: Start value</td>
+<td>CALCULATE:EM01:0001:T0INPUT</td>
+<td>0 / 1e+07</td>
 <td></td>
-<td></td>
-<td></td>
+<td>DOUBLE</td>
+<td>kWh</td>
 </tr>
 <tr>
 <td>Energy since last start</td>
@@ -2317,7 +2223,7 @@ footer {
 <td>kWh</td>
 </tr>
 <tr>
-<td>Energy unit</td>
+<td>Energy unit:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Valid values depend on power type selected:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Active power (P): 'MWh', 'kWh', 'Wh'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Reactive power (Q): 'MVarh', 'kVarh', 'Varh'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Apparent power (S): 'MVAh', 'kVAh', 'VAh'</td>
 <td>CALCULATE:EM01:0001:TXUNIT</td>
 <td></td>
 <td>MWh,kWh,Wh</td>
@@ -2341,23 +2247,7 @@ footer {
 <td>%</td>
 </tr>
 <tr>
-<td>Evaluation for the last measurement</td>
-<td>CALCULATE:EM01:0001:RATING</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Final energy value</td>
-<td>CALCULATE:EM01:0001:T1INPUT</td>
-<td>0 / 1e+07</td>
-<td></td>
-<td>DOUBLE</td>
-<td>kWh</td>
-</tr>
-<tr>
-<td>Last measurement: Duration [ms]</td>
+<td>Last measurement Duration [ms]</td>
 <td>CALCULATE:EM01:0001:MMEASTIME</td>
 <td></td>
 <td></td>
@@ -2365,7 +2255,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Last measurement: End time (dd-MM-yyyy HH:mm:ss)</td>
+<td>Last measurement End time (dd-MM-yyyy HH:mm:ss)</td>
 <td>CALCULATE:EM01:0001:ENDTIME</td>
 <td></td>
 <td></td>
@@ -2373,7 +2263,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Last measurement: Start time (dd-MM-yyyy HH:mm:ss)</td>
+<td>Last measurement Start time (dd-MM-yyyy HH:mm:ss)</td>
 <td>CALCULATE:EM01:0001:STRTTIME</td>
 <td></td>
 <td></td>
@@ -2405,7 +2295,7 @@ footer {
 <td>s</td>
 </tr>
 <tr>
-<td>Reference input: Power module name</td>
+<td>Reference input:<br/>&nbsp;&nbsp;&nbsp;&nbsp;The reference power source (powermodule) can be queried and selected.</td>
 <td>CALCULATE:EM01:0001:REFSOURCE</td>
 <td></td>
 <td>P 1,P 2,P 3,P AUX</td>
@@ -2421,7 +2311,15 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Result of last measurement</td>
+<td>Result evaluation:<br/>&nbsp;&nbsp;&nbsp;&nbsp;-1: unfinished<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: failed<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: passed</td>
+<td>CALCULATE:EM01:0001:RATING</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Result value:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Error value in [%] of the last measurement completed.</td>
 <td>CALCULATE:EM01:0001:RESULT</td>
 <td></td>
 <td></td>
@@ -2429,15 +2327,7 @@ footer {
 <td>%</td>
 </tr>
 <tr>
-<td>Start energy value</td>
-<td>CALCULATE:EM01:0001:T0INPUT</td>
-<td>0 / 1e+07</td>
-<td></td>
-<td>DOUBLE</td>
-<td>kWh</td>
-</tr>
-<tr>
-<td>Start/stop measurement:<br/>0: stop<br/>1: start</td>
+<td>Start/stop measurement:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: stop<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: start</td>
 <td>CALCULATE:EM01:0001:START</td>
 <td>0 / 1</td>
 <td></td>
@@ -2445,7 +2335,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Status:<br/>0: Idle<br/>1: Waiting for first pulse<br/>2: Started<br/>4: Ready<br/>8: Aborted</td>
+<td>Status:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: Idle<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: Waiting for first pulse<br/>&nbsp;&nbsp;&nbsp;&nbsp;2: Started<br/>&nbsp;&nbsp;&nbsp;&nbsp;4: Ready<br/>&nbsp;&nbsp;&nbsp;&nbsp;8: Aborted</td>
 <td>CALCULATE:EM01:0001:STATUS</td>
 <td></td>
 <td></td>
@@ -2453,7 +2343,7 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Stop mode:<br/>0: Start/Stop<br/>1: Duration</td>
+<td>Stop mode:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0: Start/Stop (stop manually)<br/>&nbsp;&nbsp;&nbsp;&nbsp;1: Duration (stop automatic)</td>
 <td>CALCULATE:EM01:0001:MODE</td>
 <td>0 / 1</td>
 <td></td>
@@ -2496,14 +2386,14 @@ footer {
 <td>STRING</td>
 </tr>
 <tr>
-<td>EMOB Errors bits:<br/>Bit0: Supply lost<br/>Bit1: Device error<br/>Bit2: Sensor error<br/>Bit3: Cable error<br/>Bit4: Overcurrent<br/>Bit5: Overtemperature<br/>Bit6: locking error<br/>Bit7: Problem at neighbour EMOB</td>
+<td>EMOB Errors bits:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit0: Supply lost<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit1: Device error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit2: Sensor error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit3: Cable error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit4: Overcurrent<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit5: Overtemperature<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit6: locking error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit7: Problem at neighbour EMOB</td>
 <td>EMOB:HOTP1:ERROR</td>
 <td>Query</td>
 <td>IL1,IL2,IL3,IAUX</td>
 <td>STRING</td>
 </tr>
 <tr>
-<td>EMOB plug lock state:<br/>0:unknown<br/>1:open<br/>2:locking<br/>3:locked<br/>4:error</td>
+<td>EMOB plug lock state:<br/>&nbsp;&nbsp;&nbsp;&nbsp;0:unknown<br/>&nbsp;&nbsp;&nbsp;&nbsp;1:open<br/>&nbsp;&nbsp;&nbsp;&nbsp;2:locking<br/>&nbsp;&nbsp;&nbsp;&nbsp;3:locked<br/>&nbsp;&nbsp;&nbsp;&nbsp;4:error</td>
 <td>EMOB:HOTP1:EMLOCKSTATE</td>
 <td>Query</td>
 <td>IL1,IL2,IL3,IAUX</td>
