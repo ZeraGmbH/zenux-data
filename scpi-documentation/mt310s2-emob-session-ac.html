@@ -161,13 +161,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - EMOB AC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>04-Feb-2026</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - EMOB AC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>09-Feb-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.6</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.7</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -190,7 +190,8 @@ footer {
 </ul>
 <li><a href="#Ranges">8. Ranges</a></li>
 <li><a href="#ErrorCalculators">9. Comparison Measurements</a></li>
-<li><a href="#EMOB">10. EMOB</a></li>
+<li><a href="#MeasurementRecorder">10. Measurement Value Recorder</a></li>
+<li><a href="#EMOB">11. EMOB</a></li>
 </ul>
 </div>
 <h1 id="ScpiStandard">1. SCPI Standard</h1>
@@ -1651,7 +1652,7 @@ footer {
 <td>CONFIGURATION:RNG1:GROUPING</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1667,7 +1668,7 @@ footer {
 <td>CONFIGURATION:RNG1:ENABLEIGNORERMSVAL</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1675,7 +1676,7 @@ footer {
 <td>CONFIGURATION:RNG1:UL1:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1683,7 +1684,7 @@ footer {
 <td>CONFIGURATION:RNG1:UL2:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1691,7 +1692,7 @@ footer {
 <td>CONFIGURATION:RNG1:UL3:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1699,7 +1700,7 @@ footer {
 <td>CONFIGURATION:RNG1:IL1:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1707,7 +1708,7 @@ footer {
 <td>CONFIGURATION:RNG1:IL2:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1715,7 +1716,7 @@ footer {
 <td>CONFIGURATION:RNG1:IL3:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1723,7 +1724,7 @@ footer {
 <td>CONFIGURATION:RNG1:UAUX:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1731,7 +1732,7 @@ footer {
 <td>CONFIGURATION:RNG1:IAUX:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 <tr>
@@ -1739,7 +1740,7 @@ footer {
 <td>CONFIGURATION:RNG1:RNGAUTO</td>
 <td>0 / 1</td>
 <td></td>
-<td></td>
+<td>BOOL</td>
 <td></td>
 </tr>
 </table>
@@ -2270,7 +2271,43 @@ footer {
 <td></td>
 </tr>
 </table></div>
-<h1 id="EMOB">10. EMOB</h1>
+<h1 id="MeasurementRecorder">10. Measurement Value Recorder</h1>
+<p><html>
+<body>
+    <p>Commands to record measurement values.</p>
+</body>
+</html></p>
+<div class="DataTableDiv"><table class="DataTable">
+<tr>
+<th>Description</th>
+<th>SCPI path</th>
+<th>SCPI command type</th>
+<th>Valid strings</th>
+<th>Data Type</th>
+</tr>
+<tr>
+<td>JSON export of recorded values</td>
+<td>RECORDER:REC1:EXPORT:JSON</td>
+<td>Query</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Number of points in a curve</td>
+<td>RECORDER:REC1:COUNT</td>
+<td>Query</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Parameter to start/stop recording</td>
+<td>RECORDER:REC1:RUN</td>
+<td>Query,Command+Par</td>
+<td></td>
+<td>BOOL</td>
+</tr>
+</table></div>
+<h1 id="EMOB">11. EMOB</h1>
 <p><html>
 <body>
     <p>These are the commands to be used with EMOB suitcases.</p>
