@@ -12,6 +12,7 @@
     --color-header-footer: #f0f2f3;
     --color-table-tr: #e9ebec;
     --color-table-tr-btm: #f3f3f3;
+    --color-code-background: #d0d2d4;
     --color-table-border: var(--color-bg);
     --color-table-border-btm: var(--color-green);
 }
@@ -21,6 +22,7 @@
     --color-header-footer: #36363A;
     --color-table-tr: #24242C;
     --color-table-tr-btm: #666565;
+    --color-code-background: #56585a;
     --color-table-border: var(--color-bg);
     --color-table-border-btm: var(--color-green);
 }
@@ -51,6 +53,13 @@ h3 {
     color: #25915b;
     font-weight: bold;
     margin-top: 30px;
+}
+
+pre {
+    padding: 16px;
+    overflow: auto;
+    background-color: var(--color-code-background);
+    border-radius: 5px;
 }
 
 /*Table of contents*/
@@ -161,13 +170,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - EMOB DC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>09-Feb-2026</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - EMOB DC session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>06-Mar-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.7</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.8</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -2046,7 +2055,39 @@ footer {
 <h1 id="MeasurementRecorder">10. Measurement Value Recorder</h1>
 <p><html>
 <body>
-    <p>Commands to record measurement values.</p>
+
+<p>Commands to record measurement values.</p>
+<p><strong>Pseudo schema of json returned by query 'RECORDER:REC1:EXPORT:JSON?':</strong></p>
+<pre><code>{
+  "timestamp_first_local": &lt;Local time first record as: yyyy-MM-dd HH:mm:ss.zzz&gt;,
+  "timestamp_first_utc": &lt;UTC time first record as: yyyy-MM-dd HH:mm:ss.zzz&gt;,
+  "value_sequence": [
+    &lt;Name of 1st value in "data" arrays&gt;,
+    &lt;Name of 2nd value in "data" arrays&gt;,
+    ...
+  ],
+  "values": [
+    {
+      "data": [
+        &lt;1st value&gt;,
+        &lt;2nd value&gt;,
+        ...
+      ],
+      "ts": &lt;ms since first value&gt;
+    },
+    {
+      "data": [
+        &lt;1st value&gt;,
+        &lt;2nd value&gt;,
+        ...
+      ],
+      "ts": &lt;ms since first value&gt;
+    },
+    ...
+  ]
+}
+</code></pre>
+
 </body>
 </html></p>
 <div class="DataTableDiv"><table class="DataTable">
@@ -2056,6 +2097,13 @@ footer {
 <th>SCPI command type</th>
 <th>Valid strings</th>
 <th>Data Type</th>
+</tr>
+<tr>
+<td>CSV export of recorded values</td>
+<td>RECORDER:REC1:EXPORT:CSV</td>
+<td>Query</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>JSON export of recorded values</td>
@@ -2114,7 +2162,7 @@ footer {
 <td>STRING</td>
 </tr>
 <tr>
-<td>EMOB Errors bits:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit0: Supply lost<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit1: Device error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit2: Sensor error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit3: Cable error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit4: Overcurrent<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit5: Overtemperature<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit6: locking error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit7: Problem at neighbour EMOB</td>
+<td>EMOB Errors bits:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit0: Supply lost<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit1: Device error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit2: Sensor error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit3: Cable error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit4: Overcurrent<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit5: Overtemperature<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit6: locking error<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit7: Problem at neighbour EMOB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit16: Communication to EMOB device failed.<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <b>Suggestion:</b> On device check: 🛈 / <i>Device information</i> - <b>Are there EMOB/MT650 entries?</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;  <b>Yes</b>: Was the correct channel selected (mandatory on multiple devices as EMOB/MT650)?<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <b>No</b>: Insert USB-memory stick / 🛈 / <i>Service Support / Save logfile to USB</i> -&gt; service@zera.de</td>
 <td>EMOB:HOTP1:ERROR</td>
 <td>Query</td>
 <td>IL1,IL2,IL3,IAUX</td>
@@ -2130,6 +2178,20 @@ footer {
 <tr>
 <td>Press EMOB-pushbutton</td>
 <td>EMOB:HOTP1:PBPRESS</td>
+<td>Command+Par</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Set Emob switch to the OFF position</td>
+<td>EMOB:HOTP1:OFFSWITCH</td>
+<td>Command+Par</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Set Emob switch to the ON position</td>
+<td>EMOB:HOTP1:ONSWITCH</td>
 <td>Command+Par</td>
 <td>IL1,IL2,IL3,IAUX</td>
 <td>STRING</td>
