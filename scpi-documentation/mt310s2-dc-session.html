@@ -170,13 +170,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>06-Mar-2026</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>08-Apr-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.8</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.9</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -192,9 +192,8 @@ footer {
 <li><a href="#PowerMeasurement">7.2 Power measurement</a></li>
 <li><a href="#FFTValues">7.3 FFT/DC values</a></li>
 <li><a href="#RMSValues">7.4 RMS values</a></li>
-<li><a href="#ThdMeasurement">7.5 THD measurement</a></li>
-<li><a href="#OSCValues">7.6 Oscilloscope values</a></li>
-<li><a href="#SamplingConfigs">7.7 Sampling/PLL configurations</a></li>
+<li><a href="#OSCValues">7.5 Oscilloscope values</a></li>
+<li><a href="#SamplingConfigs">7.6 Sampling/PLL configurations</a></li>
 </ul>
 <li><a href="#Ranges">8. Ranges</a></li>
 <li><a href="#ErrorCalculators">9. Comparison Measurements</a></li>
@@ -309,20 +308,16 @@ footer {
 <td>STATUS:DEV1:VERSION:CONTROLER?</td>
 </tr>
 <tr>
-<td>Current atmospheric pressure in hPa</td>
-<td>STATUS:BLE1:AIRPR?</td>
+<td>DSP Busy value [%]</td>
+<td>STATUS:DEV1:DSP:BUSYPERCENT?</td>
 </tr>
 <tr>
-<td>Current relative humidity in percent</td>
-<td>STATUS:BLE1:HUMID?</td>
+<td>DSP ms timer</td>
+<td>STATUS:DEV1:DSP:TIMEMS?</td>
 </tr>
 <tr>
-<td>Current temperature in degree Celsius</td>
-<td>STATUS:BLE1:TEMP:CELSIUS?</td>
-</tr>
-<tr>
-<td>Current temperature in degree Fahrenheit</td>
-<td>STATUS:BLE1:TEMP:FAHRENHEIT?</td>
+<td>DSP period count</td>
+<td>STATUS:DEV1:DSP:PERIODCOUNT?</td>
 </tr>
 <tr>
 <td>DSP software version</td>
@@ -335,6 +330,26 @@ footer {
 <tr>
 <td>Device type</td>
 <td>STATUS:DEV1:DEVTYPE?</td>
+</tr>
+<tr>
+<td>Environment sensor: Atmospheric pressure in hPa</td>
+<td>STATUS:BLE1:AIRPR?</td>
+</tr>
+<tr>
+<td>Environment sensor: Relative humidity in percent</td>
+<td>STATUS:BLE1:HUMID?</td>
+</tr>
+<tr>
+<td>Environment sensor: Serial number</td>
+<td>STATUS:BLE1:SERNO?</td>
+</tr>
+<tr>
+<td>Environment sensor: Temperature in degree Celsius</td>
+<td>STATUS:BLE1:TEMP:CELSIUS?</td>
+</tr>
+<tr>
+<td>Environment sensor: Temperature in degree Fahrenheit</td>
+<td>STATUS:BLE1:TEMP:FAHRENHEIT?</td>
 </tr>
 <tr>
 <td>FPGA version</td>
@@ -1361,161 +1376,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="ThdMeasurement">7.5 THD measurement</h2>
-<p><html>
-<body>
-    <p>
-        <b>THD</b> represents the <b>T</b>otal <b>H</b>armonic <b>D</b>istortion of phase values.<br>
-        SCPI names THD1 represents fundamental values and THD2 represents root mean square values.
-        The unit of returned values is %.
-    </p>
-</body>
-</html></p>
-<h3>THD 1</h3>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Configuration</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI path</th>
-<th>Min / Max</th>
-<th>Valid strings</th>
-<th>Data Type</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>Integration time</td>
-<td>CONFIGURATION:THD1:TINTEGRATION</td>
-<td>1 / 100</td>
-<td></td>
-<td>DOUBLE</td>
-<td>s</td>
-</tr>
-</table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Values</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI query</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:UL1?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:UL2?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:UL3?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:IL1?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:IL2?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:IL3?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:UAUX?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDn actual value</td>
-<td>MEASURE:THD1:IAUX?</td>
-<td>%</td>
-</tr>
-</table>
-</div>
-<h3>THD 2</h3>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Configuration</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI path</th>
-<th>Min / Max</th>
-<th>Valid strings</th>
-<th>Data Type</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>Integration time</td>
-<td>CONFIGURATION:THD2:TINTEGRATION</td>
-<td>1 / 100</td>
-<td></td>
-<td>DOUBLE</td>
-<td>s</td>
-</tr>
-</table>
-</div>
-<div class="DataTableDiv">
-<p class="DataTableName"><b>Values</b></p>
-<table class="DataTable">
-<tr>
-<th>Description</th>
-<th>SCPI query</th>
-<th>Unit</th>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:UL1?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:UL2?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:UL3?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:IL1?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:IL2?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:IL3?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:UAUX?</td>
-<td>%</td>
-</tr>
-<tr>
-<td>THDr actual value</td>
-<td>MEASURE:THD2:IAUX?</td>
-<td>%</td>
-</tr>
-</table>
-</div>
-<h2 id="OSCValues">7.6 Oscilloscope values</h2>
+<h2 id="OSCValues">7.5 Oscilloscope values</h2>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
 <table class="DataTable">
@@ -1587,7 +1448,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="SamplingConfigs">7.7 Sampling/PLL configurations</h2>
+<h2 id="SamplingConfigs">7.6 Sampling/PLL configurations</h2>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>Description</th>
@@ -2409,6 +2270,13 @@ footer {
 <td>STRING</td>
 </tr>
 <tr>
+<td>EMOB test value state bits:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit0: AC high voltage detected<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit1: DC high voltage detected<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bit16: Communication to EMOB device failed.<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <b>Suggestion:</b> On device check: 🛈 / <i>Device information</i> - <b>Are there EMOB/MT650 entries?</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;  <b>Yes</b>: Was the correct channel selected (mandatory on multiple devices as EMOB/MT650)?<br/>&nbsp;&nbsp;&nbsp;&nbsp;  <b>No</b>: Insert USB-memory stick / 🛈 / <i>Service Support / Save logfile to USB</i> -&gt; service@zera.de</td>
+<td>EMOB:HOTP1:TSTVALUESTATE</td>
+<td>Query</td>
+<td>IL1,IL2,IL3,IAUX</td>
+<td>STRING</td>
+</tr>
+<tr>
 <td>Press EMOB-pushbutton</td>
 <td>EMOB:HOTP1:PBPRESS</td>
 <td>Command+Par</td>
@@ -2416,15 +2284,15 @@ footer {
 <td>STRING</td>
 </tr>
 <tr>
-<td>Set Emob switch to the OFF position</td>
-<td>EMOB:HOTP1:OFFSWITCH</td>
+<td>Switch source discharge off</td>
+<td>EMOB:HOTP1:OFFDISCHARGE</td>
 <td>Command+Par</td>
 <td>IL1,IL2,IL3,IAUX</td>
 <td>STRING</td>
 </tr>
 <tr>
-<td>Set Emob switch to the ON position</td>
-<td>EMOB:HOTP1:ONSWITCH</td>
+<td>Switch source discharge on</td>
+<td>EMOB:HOTP1:ONDISCHARGE</td>
 <td>Command+Par</td>
 <td>IL1,IL2,IL3,IAUX</td>
 <td>STRING</td>
