@@ -170,13 +170,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands COM5003 - Changing energy direction session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>08-Apr-2026</b></i></footer><script>
+    </svg>SCPI commands COM5003 - Changing energy direction session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>16-Apr-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.9</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.10</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -188,15 +188,16 @@ footer {
 <li><a href="#ScpiStandardCmds">6. Standard SCPI commands</a></li>
 <li><a href="#MeasSystems">7. Measurement systems</a></li>
 <ul>
-<li><a href="#PhaseValues">7.1 Phase amplitudes and angles</a></li>
-<li><a href="#PowerMeasurement">7.2 Power measurement</a></li>
-<li><a href="#FFTValues">7.3 FFT/DC values</a></li>
-<li><a href="#RMSValues">7.4 RMS values</a></li>
-<li><a href="#ThdMeasurement">7.5 THD measurement</a></li>
-<li><a href="#LambdaValues">7.6 Lambda values</a></li>
-<li><a href="#HarmonicPowerValues">7.7 Harmonic power values</a></li>
-<li><a href="#OSCValues">7.8 Oscilloscope values</a></li>
-<li><a href="#SamplingConfigs">7.9 Sampling/PLL configurations</a></li>
+<li><a href="#GlobalMeasSettings">7.1 Global measurement settings</a></li>
+<li><a href="#PhaseValues">7.2 Phase amplitudes and angles</a></li>
+<li><a href="#PowerMeasurement">7.3 Power measurement</a></li>
+<li><a href="#FFTValues">7.4 FFT/DC values</a></li>
+<li><a href="#RMSValues">7.5 RMS values</a></li>
+<li><a href="#ThdMeasurement">7.6 THD measurement</a></li>
+<li><a href="#LambdaValues">7.7 Lambda values</a></li>
+<li><a href="#HarmonicPowerValues">7.8 Harmonic power values</a></li>
+<li><a href="#OSCValues">7.9 Oscilloscope values</a></li>
+<li><a href="#SamplingConfigs">7.10 Sampling/PLL configurations</a></li>
 </ul>
 <li><a href="#Ranges">8. Ranges</a></li>
 <li><a href="#ErrorCalculators">9. Comparison Measurements</a></li>
@@ -322,7 +323,7 @@ footer {
 <td>STATUS:DEV1:VERSION:DSPSERVER?</td>
 </tr>
 <tr>
-<td>Device type</td>
+<td>Device type e.g 'mt310s2' or 'com5003'</td>
 <td>STATUS:DEV1:DEVTYPE?</td>
 </tr>
 <tr>
@@ -544,7 +545,41 @@ footer {
 
 </body>
 </html></p>
-<h2 id="PhaseValues">7.1 Phase amplitudes and angles</h2>
+<h2 id="GlobalMeasSettings">7.1 Global measurement settings</h2>
+<p><html>
+<body>
+    <p>
+        Global measurement settings are set as:
+    </p>
+</body>
+</html></p>
+<div class="DataTableDiv"><table class="DataTable">
+<tr>
+<th>Description</th>
+<th>SCPI path</th>
+<th>SCPI command type</th>
+<th>Min / Max</th>
+<th>Data Type</th>
+<th>Unit</th>
+</tr>
+<tr>
+<td>Global integration period<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Issuing command sets integration time for all modules with unit [period]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Query follows integration time of RMS measurement</td>
+<td>CONFIGURATION:DSP1:TPERIOD</td>
+<td>Query,Command+Par</td>
+<td>5 / 5000</td>
+<td>INTEGER</td>
+<td>period</td>
+</tr>
+<tr>
+<td>Global integration time<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Issuing command sets integration time for all modules with unit [s]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Query follows integration time of RMS measurement</td>
+<td>CONFIGURATION:DSP1:TINTEGRATION</td>
+<td>Query,Command+Par</td>
+<td>1 / 100</td>
+<td>DOUBLE</td>
+<td>s</td>
+</tr>
+</table></div>
+<h2 id="PhaseValues">7.2 Phase amplitudes and angles</h2>
 <p><html>
 <body>
     <p>
@@ -687,7 +722,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="PowerMeasurement">7.2 Power measurement</h2>
+<h2 id="PowerMeasurement">7.3 Power measurement</h2>
 <p><html>
 <body>
     <p>
@@ -951,7 +986,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="FFTValues">7.3 FFT/DC values</h2>
+<h2 id="FFTValues">7.4 FFT/DC values</h2>
 <p><html>
 <body>
     <p>
@@ -1061,7 +1096,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="RMSValues">7.4 RMS values</h2>
+<h2 id="RMSValues">7.5 RMS values</h2>
 <p><html>
 <body>
     <p>
@@ -1147,7 +1182,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="ThdMeasurement">7.5 THD measurement</h2>
+<h2 id="ThdMeasurement">7.6 THD measurement</h2>
 <p><html>
 <body>
     <p>
@@ -1281,7 +1316,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="LambdaValues">7.6 Lambda values</h2>
+<h2 id="LambdaValues">7.7 Lambda values</h2>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Values</b></p>
 <table class="DataTable">
@@ -1312,7 +1347,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="HarmonicPowerValues">7.7 Harmonic power values</h2>
+<h2 id="HarmonicPowerValues">7.8 Harmonic power values</h2>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
 <table class="DataTable">
@@ -1412,7 +1447,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="OSCValues">7.8 Oscilloscope values</h2>
+<h2 id="OSCValues">7.9 Oscilloscope values</h2>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Configuration</b></p>
 <table class="DataTable">
@@ -1474,7 +1509,7 @@ footer {
 </tr>
 </table>
 </div>
-<h2 id="SamplingConfigs">7.9 Sampling/PLL configurations</h2>
+<h2 id="SamplingConfigs">7.10 Sampling/PLL configurations</h2>
 <div class="DataTableDiv"><table class="DataTable">
 <tr>
 <th>Description</th>
