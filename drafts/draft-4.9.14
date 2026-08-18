@@ -1,0 +1,27 @@
+**Features all devices**
+
+* WebGui can download log files. This helps in environments where device is unreachable or memory sticks are not allowed
+* Fasten opening language combobox most notable on remote GUI
+* Rewrite SCPI implementation and add many tests to add an option which enables sort of SCPI responses for multiple queries. Since this can lead to unwanted behavior change on tailored scripts, the option is disabled by default.
+* **Introduce a one button / on-the-fly update if device is connected to network. If user wishes device periodically polls for new updates**
+* WebSam vein API: Add support for MeasurementIndex
+* Upgrade systemcontroller V108 -> V110
+    * Internal: Library update / rework
+    * Add commands to red / set instrument subtype
+    * Reactivate commands to read display type
+* Developer images can be updated by ZUP without failing on missing dependencies
+* Network start delay of 2s introduced as workaround in version x.xx is properly removed
+* A protected command was introduced to clear device adjustment data
+* Retain color/bold information in logs (ANSI formatted). To view a script in this repo scripts/journal2html.py was created.
+* Do not convert update log files to HTML but create ANSI formatted logs to avoid HTML bags of surprise.
+* SCPI documentation: Document bits in STB
+
+**Bugfix all devices**
+* Interrupt running preload pages properly on fast session change
+
+**Bugfix MT310s2**
+* Early EMOB device detection could fail causing missing firmware update
+
+**Updates all devices**
+* linux kernel: Upgrade to 6.18.44
+
