@@ -170,13 +170,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands COM5003 - Reference session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>11-Sep-2026</b></i></footer><script>
+    </svg>SCPI commands COM5003 - Reference session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>17-Sep-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.9.15</b>.</p>
+<p>This document was created with operating system version: <b>release-4.9.16</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -386,16 +386,16 @@ footer {
 <td>STRING</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>XSession name</td>
 <td>CONFIGURATION:SYST:XSESSION</td>
 <td>Desktop,Fullscreen</td>
 <td>STRING</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </table></div>
 <h1 id="ScpiStandardCmds">6. Standard SCPI commands</h1>
@@ -612,12 +612,12 @@ footer {
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:DFT1:R1DC?</td>
+<td>MEASURE:DFT1:R3DC?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:DFT1:R3DC?</td>
+<td>MEASURE:DFT1:R6DC?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -626,8 +626,8 @@ footer {
 <td>V</td>
 </tr>
 <tr>
-<td>DC actual value</td>
-<td>MEASURE:DFT1:R5DC?</td>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
+<td>MEASURE:DFT1:REF1?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -636,13 +636,8 @@ footer {
 <td>V</td>
 </tr>
 <tr>
-<td>DC actual value</td>
-<td>MEASURE:DFT1:R2DC?</td>
-<td>V</td>
-</tr>
-<tr>
 <td>Actual value phase/neutral / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF1?</td>
+<td>MEASURE:DFT1:REF2?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -656,18 +651,23 @@ footer {
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF6?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value phase/neutral / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF2?</td>
+<td>DC actual value</td>
+<td>MEASURE:DFT1:R2DC?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:DFT1:R6DC?</td>
+<td>MEASURE:DFT1:R5DC?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>DC actual value</td>
+<td>MEASURE:DFT1:R1DC?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
+<td>MEASURE:DFT1:REF6?</td>
 <td>V</td>
 </tr>
 </table>
@@ -714,22 +714,6 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Active phases selection mask</td>
-<td>CONFIGURATION:POW1:MEASMODEPHASESELECT</td>
-<td></td>
-<td>111</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW1:MMODE</td>
-<td></td>
-<td>QREF</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
 <td>Nominal frequency</td>
 <td>CONFIGURATION:POW1:NOMINAL_FREQ</td>
 <td>10000 / 200000</td>
@@ -746,6 +730,22 @@ footer {
 <td></td>
 </tr>
 <tr>
+<td>Measuring mode</td>
+<td>CONFIGURATION:POW1:MMODE</td>
+<td></td>
+<td>QREF</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency output name</td>
+<td>CONFIGURATION:POW1:M0OUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW1:TINTEGRATION</td>
 <td>1 / 100</td>
@@ -754,11 +754,11 @@ footer {
 <td>s</td>
 </tr>
 <tr>
-<td>Frequency output name</td>
-<td>CONFIGURATION:POW1:M0OUT</td>
+<td>Active phases selection mask</td>
+<td>CONFIGURATION:POW1:MEASMODEPHASESELECT</td>
 <td></td>
-<td></td>
-<td></td>
+<td>111</td>
+<td>STRING</td>
 <td></td>
 </tr>
 </table>
@@ -784,11 +784,6 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW1:S?</td>
-<td></td>
-</tr>
-<tr>
 <td>Actual power value REF3/REF6</td>
 <td>MEASURE:POW1:3?</td>
 <td></td>
@@ -796,6 +791,11 @@ footer {
 <tr>
 <td>Actual power value REF1/REF4</td>
 <td>MEASURE:POW1:1?</td>
+<td></td>
+</tr>
+<tr>
+<td>Actual power value sum all phases</td>
+<td>MEASURE:POW1:S?</td>
 <td></td>
 </tr>
 </table>
@@ -832,13 +832,19 @@ footer {
 </tr>
 <tr>
 <td>Channel's range</td>
+<td>SENSE:RNG1:REF1:RANGE</td>
+<td>R10V,R0V</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Channel's range</td>
 <td>SENSE:RNG1:REF3:RANGE</td>
 <td>R10V,R0V</td>
 <td>STRING</td>
 </tr>
 <tr>
 <td>Channel's range</td>
-<td>SENSE:RNG1:REF1:RANGE</td>
+<td>SENSE:RNG1:REF2:RANGE</td>
 <td>R10V,R0V</td>
 <td>STRING</td>
 </tr>
@@ -860,24 +866,18 @@ footer {
 <td>R10V,R0V</td>
 <td>STRING</td>
 </tr>
-<tr>
-<td>Channel's range</td>
-<td>SENSE:RNG1:REF2:RANGE</td>
-<td>R10V,R0V</td>
-<td>STRING</td>
-</tr>
 </table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Catalog</b></p>
 <table class="DataTable">
 <tr><th>SCPI query</th></tr>
-<tr><td>SENSE:RNG1:REF3:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:REF1:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:REF3:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:REF2:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:REF4:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:REF5:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:REF6:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:REF2:RANGE:CATALOG?</td></tr>
 </table>
 </div>
 <div class="DataTableDiv">
@@ -915,28 +915,20 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Range automatic on/off</td>
-<td>CONFIGURATION:RNG1:RNGAUTO</td>
+<td>Enable or disable channel ignore limit option</td>
+<td>CONFIGURATION:RNG1:ENABLEIGNORERMSVAL</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
 <td></td>
 </tr>
 <tr>
-<td>Range timer for range decrease</td>
-<td>CONFIGURATION:RNG1:RNGTIMER</td>
-<td>0 / 600000</td>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:REF1:INVERTPHASE</td>
+<td>0 / 1</td>
 <td></td>
-<td>INTEGER</td>
+<td>BOOL</td>
 <td></td>
-</tr>
-<tr>
-<td>Percentage of nominal range below which channel values are ignored</td>
-<td>CONFIGURATION:RNG1:IGNORERMSVAL</td>
-<td>0 / 2</td>
-<td></td>
-<td>DOUBLE</td>
-<td>%</td>
 </tr>
 <tr>
 <td>Inverted Phase</td>
@@ -947,8 +939,8 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Channel grouping on/off</td>
-<td>CONFIGURATION:RNG1:GROUPING</td>
+<td>Range automatic on/off</td>
+<td>CONFIGURATION:RNG1:RNGAUTO</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -956,7 +948,7 @@ footer {
 </tr>
 <tr>
 <td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF1:INVERTPHASE</td>
+<td>CONFIGURATION:RNG1:REF2:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -979,24 +971,32 @@ footer {
 <td></td>
 </tr>
 <tr>
+<td>Channel grouping on/off</td>
+<td>CONFIGURATION:RNG1:GROUPING</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Percentage of nominal range below which channel values are ignored</td>
+<td>CONFIGURATION:RNG1:IGNORERMSVAL</td>
+<td>0 / 2</td>
+<td></td>
+<td>DOUBLE</td>
+<td>%</td>
+</tr>
+<tr>
+<td>Range timer for range decrease</td>
+<td>CONFIGURATION:RNG1:RNGTIMER</td>
+<td>0 / 600000</td>
+<td></td>
+<td>INTEGER</td>
+<td></td>
+</tr>
+<tr>
 <td>Inverted Phase</td>
 <td>CONFIGURATION:RNG1:REF6:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Enable or disable channel ignore limit option</td>
-<td>CONFIGURATION:RNG1:ENABLEIGNORERMSVAL</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF2:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -1014,12 +1014,17 @@ footer {
 </tr>
 <tr>
 <td>Actual peak value</td>
+<td>MEASURE:RNG1:REF1?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual peak value</td>
 <td>MEASURE:RNG1:REF3?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:REF1?</td>
+<td>MEASURE:RNG1:REF2?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -1040,11 +1045,6 @@ footer {
 <tr>
 <td>Actual peak value</td>
 <td>MEASURE:RNG1:REF6?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual peak value</td>
-<td>MEASURE:RNG1:REF2?</td>
 <td>V</td>
 </tr>
 </table>
