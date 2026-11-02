@@ -170,13 +170,13 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>25-Oct-2026</b></i></footer><script>
+    </svg>SCPI commands MT310s2 - DC: 4*Voltage / 1*Current session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>02-Nov-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.10.0</b>.</p>
+<p>This document was created with operating system version: <b>release-4.10.1</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
@@ -393,10 +393,10 @@ footer {
 <th>Data Type</th>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>XSession name</td>
+<td>CONFIGURATION:SYST:XSESSION</td>
+<td>Desktop,Fullscreen</td>
+<td>STRING</td>
 </tr>
 <tr>
 <td>Session name</td>
@@ -405,10 +405,10 @@ footer {
 <td>STRING</td>
 </tr>
 <tr>
-<td>XSession name</td>
-<td>CONFIGURATION:SYST:XSESSION</td>
-<td>Desktop,Fullscreen</td>
-<td>STRING</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </table></div>
 <h1 id="ScpiStandardCmds">6. Standard SCPI commands</h1>
@@ -624,18 +624,8 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Actual value phase/neutral / cartesian format: re,im</td>
-<td>MEASURE:DFT1:UL2?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Phase sequence</td>
-<td>MEASURE:DFT1:RFIELD?</td>
-<td></td>
-</tr>
-<tr>
-<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:U2?</td>
+<td>Actual value phase/phase / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U1U2?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -644,13 +634,33 @@ footer {
 <td>V</td>
 </tr>
 <tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
+<td>MEASURE:DFT1:UL2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U4?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
+<td>MEASURE:DFT1:IL2?</td>
+<td>A</td>
+</tr>
+<tr>
 <td>Actual value phase/phase / cartesian format: re,im</td>
-<td>MEASURE:DFT1:UL1-UL2?</td>
+<td>MEASURE:DFT1:UL3-UL1?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U1?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:I3?</td>
+<td>MEASURE:DFT1:I4?</td>
 <td>A</td>
 </tr>
 <tr>
@@ -659,8 +669,18 @@ footer {
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:I4?</td>
+<td>Actual value phase/phase / cartesian format: re,im</td>
+<td>MEASURE:DFT1:UL1-UL2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
+<td>MEASURE:DFT1:UL1?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
+<td>MEASURE:DFT1:IL1?</td>
 <td>A</td>
 </tr>
 <tr>
@@ -670,33 +690,18 @@ footer {
 </tr>
 <tr>
 <td>Actual value / cartesian format: re,im</td>
-<td>MEASURE:DFT1:IL2?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:U1?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:I2?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual value / cartesian format: re,im</td>
-<td>MEASURE:DFT1:IL1?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:I1?</td>
+<td>MEASURE:DFT1:IL3?</td>
 <td>A</td>
 </tr>
 <tr>
 <td>Actual value phase/phase / cartesian format: re,im</td>
-<td>MEASURE:DFT1:UL3-UL1?</td>
+<td>MEASURE:DFT1:UL3-UL2?</td>
 <td>V</td>
+</tr>
+<tr>
+<td>Phase sequence</td>
+<td>MEASURE:DFT1:RFIELD?</td>
+<td></td>
 </tr>
 <tr>
 <td>Actual value phase/phase / polar format: abs,rad[0,2π],deg[0,360]</td>
@@ -709,13 +714,18 @@ footer {
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/phase / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:U1U2?</td>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I2?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:U2?</td>
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value / cartesian format: re,im</td>
-<td>MEASURE:DFT1:IL3?</td>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I1?</td>
 <td>A</td>
 </tr>
 <tr>
@@ -724,19 +734,9 @@ footer {
 <td>A</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral / cartesian format: re,im</td>
-<td>MEASURE:DFT1:UL1?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value phase/neutral / polar format: abs,rad[0,2π],deg[0,360]</td>
-<td>MEASURE:DFT1:U4?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value phase/phase / cartesian format: re,im</td>
-<td>MEASURE:DFT1:UL3-UL2?</td>
-<td>V</td>
+<td>Actual value / polar format: abs,rad[0,2π],deg[0,360]</td>
+<td>MEASURE:DFT1:I3?</td>
+<td>A</td>
 </tr>
 </table>
 </div>
@@ -802,8 +802,24 @@ footer {
 <td>Hz</td>
 </tr>
 <tr>
+<td>Measuring mode</td>
+<td>CONFIGURATION:POW1:MMODE</td>
+<td></td>
+<td>2LW</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
 <td>Frequency output name</td>
 <td>CONFIGURATION:POW1:M0OUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency output constant</td>
+<td>CONFIGURATION:POW1:M0CONSTANT</td>
 <td></td>
 <td></td>
 <td></td>
@@ -818,28 +834,12 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Frequency output constant</td>
-<td>CONFIGURATION:POW1:M0CONSTANT</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW1:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
 <td>s</td>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW1:MMODE</td>
-<td></td>
-<td>2LW</td>
-<td>STRING</td>
-<td></td>
 </tr>
 </table>
 </div>
@@ -859,13 +859,13 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Unused in this session phase 2</td>
-<td>MEASURE:POW1:P2?</td>
+<td>Unused in this session phase 3</td>
+<td>MEASURE:POW1:P3?</td>
 <td>W</td>
 </tr>
 <tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW1:PS?</td>
+<td>Unused in this session phase 2</td>
+<td>MEASURE:POW1:P2?</td>
 <td>W</td>
 </tr>
 <tr>
@@ -874,8 +874,8 @@ footer {
 <td>W</td>
 </tr>
 <tr>
-<td>Unused in this session phase 3</td>
-<td>MEASURE:POW1:P3?</td>
+<td>Actual power value sum all phases</td>
+<td>MEASURE:POW1:PS?</td>
 <td>W</td>
 </tr>
 </table>
@@ -901,8 +901,24 @@ footer {
 <td>Hz</td>
 </tr>
 <tr>
+<td>Measuring mode</td>
+<td>CONFIGURATION:POW2:MMODE</td>
+<td></td>
+<td>2LW</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
 <td>Frequency output name</td>
 <td>CONFIGURATION:POW2:M0OUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency output constant</td>
+<td>CONFIGURATION:POW2:M0CONSTANT</td>
 <td></td>
 <td></td>
 <td></td>
@@ -917,28 +933,12 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Frequency output constant</td>
-<td>CONFIGURATION:POW2:M0CONSTANT</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW2:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
 <td>s</td>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW2:MMODE</td>
-<td></td>
-<td>2LW</td>
-<td>STRING</td>
-<td></td>
 </tr>
 </table>
 </div>
@@ -958,13 +958,13 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Unused in this session phase 2</td>
-<td>MEASURE:POW2:P2?</td>
+<td>Unused in this session phase 3</td>
+<td>MEASURE:POW2:P3?</td>
 <td>W</td>
 </tr>
 <tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW2:PS?</td>
+<td>Unused in this session phase 2</td>
+<td>MEASURE:POW2:P2?</td>
 <td>W</td>
 </tr>
 <tr>
@@ -973,8 +973,8 @@ footer {
 <td>W</td>
 </tr>
 <tr>
-<td>Unused in this session phase 3</td>
-<td>MEASURE:POW2:P3?</td>
+<td>Actual power value sum all phases</td>
+<td>MEASURE:POW2:PS?</td>
 <td>W</td>
 </tr>
 </table>
@@ -1000,8 +1000,24 @@ footer {
 <td>Hz</td>
 </tr>
 <tr>
+<td>Measuring mode</td>
+<td>CONFIGURATION:POW3:MMODE</td>
+<td></td>
+<td>2LW</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
 <td>Frequency output name</td>
 <td>CONFIGURATION:POW3:M0OUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency output constant</td>
+<td>CONFIGURATION:POW3:M0CONSTANT</td>
 <td></td>
 <td></td>
 <td></td>
@@ -1016,28 +1032,12 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Frequency output constant</td>
-<td>CONFIGURATION:POW3:M0CONSTANT</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW3:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
 <td>s</td>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW3:MMODE</td>
-<td></td>
-<td>2LW</td>
-<td>STRING</td>
-<td></td>
 </tr>
 </table>
 </div>
@@ -1057,13 +1057,13 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Unused in this session phase 2</td>
-<td>MEASURE:POW3:P2?</td>
+<td>Unused in this session phase 3</td>
+<td>MEASURE:POW3:P3?</td>
 <td>W</td>
 </tr>
 <tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW3:PS?</td>
+<td>Unused in this session phase 2</td>
+<td>MEASURE:POW3:P2?</td>
 <td>W</td>
 </tr>
 <tr>
@@ -1072,8 +1072,8 @@ footer {
 <td>W</td>
 </tr>
 <tr>
-<td>Unused in this session phase 3</td>
-<td>MEASURE:POW3:P3?</td>
+<td>Actual power value sum all phases</td>
+<td>MEASURE:POW3:PS?</td>
 <td>W</td>
 </tr>
 </table>
@@ -1099,8 +1099,24 @@ footer {
 <td>Hz</td>
 </tr>
 <tr>
+<td>Measuring mode</td>
+<td>CONFIGURATION:POW4:MMODE</td>
+<td></td>
+<td>2LW</td>
+<td>STRING</td>
+<td></td>
+</tr>
+<tr>
 <td>Frequency output name</td>
 <td>CONFIGURATION:POW4:M0OUT</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Frequency output constant</td>
+<td>CONFIGURATION:POW4:M0CONSTANT</td>
 <td></td>
 <td></td>
 <td></td>
@@ -1115,28 +1131,12 @@ footer {
 <td></td>
 </tr>
 <tr>
-<td>Frequency output constant</td>
-<td>CONFIGURATION:POW4:M0CONSTANT</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:POW4:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
 <td>s</td>
-</tr>
-<tr>
-<td>Measuring mode</td>
-<td>CONFIGURATION:POW4:MMODE</td>
-<td></td>
-<td>2LW</td>
-<td>STRING</td>
-<td></td>
 </tr>
 </table>
 </div>
@@ -1156,13 +1156,13 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Unused in this session phase 2</td>
-<td>MEASURE:POW4:P2?</td>
+<td>Unused in this session phase 3</td>
+<td>MEASURE:POW4:P3?</td>
 <td>W</td>
 </tr>
 <tr>
-<td>Actual power value sum all phases</td>
-<td>MEASURE:POW4:PS?</td>
+<td>Unused in this session phase 2</td>
+<td>MEASURE:POW4:P2?</td>
 <td>W</td>
 </tr>
 <tr>
@@ -1171,8 +1171,8 @@ footer {
 <td>W</td>
 </tr>
 <tr>
-<td>Unused in this session phase 3</td>
-<td>MEASURE:POW4:P3?</td>
+<td>Actual power value sum all phases</td>
+<td>MEASURE:POW4:PS?</td>
 <td>W</td>
 </tr>
 </table>
@@ -1227,7 +1227,7 @@ footer {
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:FFT1:UL2_DC?</td>
+<td>MEASURE:FFT1:UL1_DC?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -1237,32 +1237,17 @@ footer {
 </tr>
 <tr>
 <td>FFT actual values</td>
-<td>MEASURE:FFT1:UL1?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>DC actual value</td>
-<td>MEASURE:FFT1:IL3_DC?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>DC actual value</td>
-<td>MEASURE:FFT1:IAUX_DC?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>DC actual value</td>
-<td>MEASURE:FFT1:IL2_DC?</td>
+<td>MEASURE:FFT1:IL1?</td>
 <td>A</td>
 </tr>
 <tr>
 <td>FFT actual values</td>
-<td>MEASURE:FFT1:IAUX?</td>
-<td>A</td>
+<td>MEASURE:FFT1:UAUX?</td>
+<td>V</td>
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:FFT1:UL3_DC?</td>
+<td>MEASURE:FFT1:UL2_DC?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -1272,12 +1257,27 @@ footer {
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:FFT1:UL1_DC?</td>
+<td>MEASURE:FFT1:IAUX_DC?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DC actual value</td>
+<td>MEASURE:FFT1:IL3_DC?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>FFT actual values</td>
+<td>MEASURE:FFT1:UL2?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:FFT1:IL1_DC?</td>
+<td>MEASURE:FFT1:UL3_DC?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>DC actual value</td>
+<td>MEASURE:FFT1:IL2_DC?</td>
 <td>A</td>
 </tr>
 <tr>
@@ -1287,13 +1287,8 @@ footer {
 </tr>
 <tr>
 <td>FFT actual values</td>
-<td>MEASURE:FFT1:IL1?</td>
+<td>MEASURE:FFT1:IAUX?</td>
 <td>A</td>
-</tr>
-<tr>
-<td>FFT actual values</td>
-<td>MEASURE:FFT1:UL2?</td>
-<td>V</td>
 </tr>
 <tr>
 <td>FFT actual values</td>
@@ -1301,8 +1296,13 @@ footer {
 <td>V</td>
 </tr>
 <tr>
+<td>DC actual value</td>
+<td>MEASURE:FFT1:IL1_DC?</td>
+<td>A</td>
+</tr>
+<tr>
 <td>FFT actual values</td>
-<td>MEASURE:FFT1:UAUX?</td>
+<td>MEASURE:FFT1:UL1?</td>
 <td>V</td>
 </tr>
 </table>
@@ -1347,18 +1347,33 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Actual rms value phase/phase</td>
-<td>MEASURE:RMS1:UL3-UL2?</td>
-<td>V</td>
+<td>Actual rms value</td>
+<td>MEASURE:RMS1:IL1?</td>
+<td>A</td>
 </tr>
 <tr>
 <td>Actual rms value phase/neutral</td>
-<td>MEASURE:RMS1:UL1?</td>
+<td>MEASURE:RMS1:UAUX?</td>
 <td>V</td>
+</tr>
+<tr>
+<td>Actual rms value</td>
+<td>MEASURE:RMS1:IL2?</td>
+<td>A</td>
 </tr>
 <tr>
 <td>Actual rms value phase/phase</td>
 <td>MEASURE:RMS1:UL3-UL1?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual rms value phase/neutral</td>
+<td>MEASURE:RMS1:UL2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual rms value phase/phase</td>
+<td>MEASURE:RMS1:UL3-UL2?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -1368,28 +1383,13 @@ footer {
 </tr>
 <tr>
 <td>Actual rms value</td>
-<td>MEASURE:RMS1:IAUX?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual rms value</td>
-<td>MEASURE:RMS1:IL2?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual rms value</td>
 <td>MEASURE:RMS1:IL3?</td>
 <td>A</td>
 </tr>
 <tr>
 <td>Actual rms value</td>
-<td>MEASURE:RMS1:IL1?</td>
+<td>MEASURE:RMS1:IAUX?</td>
 <td>A</td>
-</tr>
-<tr>
-<td>Actual rms value phase/neutral</td>
-<td>MEASURE:RMS1:UL2?</td>
-<td>V</td>
 </tr>
 <tr>
 <td>Actual rms value phase/neutral</td>
@@ -1398,7 +1398,7 @@ footer {
 </tr>
 <tr>
 <td>Actual rms value phase/neutral</td>
-<td>MEASURE:RMS1:UAUX?</td>
+<td>MEASURE:RMS1:UL1?</td>
 <td>V</td>
 </tr>
 </table>
@@ -1435,27 +1435,17 @@ footer {
 </tr>
 <tr>
 <td>Measures samples</td>
-<td>MEASURE:OSC1:UL1?</td>
+<td>MEASURE:OSC1:IL1?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Measures samples</td>
+<td>MEASURE:OSC1:UAUX?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Measures samples</td>
-<td>MEASURE:OSC1:IAUX?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Measures samples</td>
 <td>MEASURE:OSC1:IL2?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Measures samples</td>
-<td>MEASURE:OSC1:IL3?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Measures samples</td>
-<td>MEASURE:OSC1:IL1?</td>
 <td>A</td>
 </tr>
 <tr>
@@ -1465,12 +1455,22 @@ footer {
 </tr>
 <tr>
 <td>Measures samples</td>
+<td>MEASURE:OSC1:IL3?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Measures samples</td>
+<td>MEASURE:OSC1:IAUX?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Measures samples</td>
 <td>MEASURE:OSC1:UL3?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Measures samples</td>
-<td>MEASURE:OSC1:UAUX?</td>
+<td>MEASURE:OSC1:UL1?</td>
 <td>V</td>
 </tr>
 </table>
@@ -1528,31 +1528,19 @@ footer {
 </tr>
 <tr>
 <td>Channel's range</td>
-<td>SENSE:RNG1:UL1:RANGE</td>
+<td>SENSE:RNG1:IL1:RANGE</td>
+<td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Channel's range</td>
+<td>SENSE:RNG1:UAUX:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
 </tr>
 <tr>
 <td>Channel's range</td>
-<td>SENSE:RNG1:IAUX:RANGE</td>
-<td>--</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>Channel's range</td>
 <td>SENSE:RNG1:IL2:RANGE</td>
-<td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>Channel's range</td>
-<td>SENSE:RNG1:IL3:RANGE</td>
-<td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>Channel's range</td>
-<td>SENSE:RNG1:IL1:RANGE</td>
 <td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
 <td>STRING</td>
 </tr>
@@ -1564,13 +1552,25 @@ footer {
 </tr>
 <tr>
 <td>Channel's range</td>
+<td>SENSE:RNG1:IL3:RANGE</td>
+<td>10A,5A,2.5A,1.0A,500mA,250mA,100mA,50mA,25mA</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Channel's range</td>
+<td>SENSE:RNG1:IAUX:RANGE</td>
+<td>--</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Channel's range</td>
 <td>SENSE:RNG1:UL3:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
 </tr>
 <tr>
 <td>Channel's range</td>
-<td>SENSE:RNG1:UAUX:RANGE</td>
+<td>SENSE:RNG1:UL1:RANGE</td>
 <td>250V,8V,100mV</td>
 <td>STRING</td>
 </tr>
@@ -1580,14 +1580,14 @@ footer {
 <p class="DataTableName"><b>Catalog</b></p>
 <table class="DataTable">
 <tr><th>SCPI query</th></tr>
-<tr><td>SENSE:RNG1:UL1:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:IAUX:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:IL2:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:IL3:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:IL1:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:UL2:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:UL3:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:UAUX:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:IL2:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:UL2:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:IL3:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:IAUX:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:UL3:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:UL1:RANGE:CATALOG?</td></tr>
 </table>
 </div>
 <div class="DataTableDiv">
@@ -1625,72 +1625,8 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Range automatic on/off</td>
-<td>CONFIGURATION:RNG1:RNGAUTO</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:UL1:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
 <td>Channel grouping on/off</td>
 <td>CONFIGURATION:RNG1:GROUPING</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Enable or disable channel ignore limit option</td>
-<td>CONFIGURATION:RNG1:ENABLEIGNORERMSVAL</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Range timer for range decrease</td>
-<td>CONFIGURATION:RNG1:RNGTIMER</td>
-<td>0 / 600000</td>
-<td></td>
-<td>INTEGER</td>
-<td>ms</td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:IAUX:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:IL2:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:IL3:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:IL1:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -1706,7 +1642,63 @@ footer {
 </tr>
 <tr>
 <td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IL1:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:UAUX:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IL2:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
 <td>CONFIGURATION:RNG1:UL2:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Range timer for range decrease</td>
+<td>CONFIGURATION:RNG1:RNGTIMER</td>
+<td>0 / 600000</td>
+<td></td>
+<td>INTEGER</td>
+<td>ms</td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IL3:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:IAUX:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Range automatic on/off</td>
+<td>CONFIGURATION:RNG1:RNGAUTO</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -1721,8 +1713,16 @@ footer {
 <td></td>
 </tr>
 <tr>
+<td>Enable or disable channel ignore limit option</td>
+<td>CONFIGURATION:RNG1:ENABLEIGNORERMSVAL</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
 <td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:UAUX:INVERTPHASE</td>
+<td>CONFIGURATION:RNG1:UL1:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -1740,7 +1740,22 @@ footer {
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:UL1?</td>
+<td>MEASURE:RNG1:IL1?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual peak value</td>
+<td>MEASURE:RNG1:UAUX?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual peak value</td>
+<td>MEASURE:RNG1:IL2?</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Actual peak value</td>
+<td>MEASURE:RNG1:UL2?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -1750,28 +1765,13 @@ footer {
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:IAUX?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual peak value</td>
-<td>MEASURE:RNG1:IL2?</td>
-<td>A</td>
-</tr>
-<tr>
-<td>Actual peak value</td>
 <td>MEASURE:RNG1:IL3?</td>
 <td>A</td>
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:IL1?</td>
+<td>MEASURE:RNG1:IAUX?</td>
 <td>A</td>
-</tr>
-<tr>
-<td>Actual peak value</td>
-<td>MEASURE:RNG1:UL2?</td>
-<td>V</td>
 </tr>
 <tr>
 <td>Actual peak value</td>
@@ -1780,7 +1780,7 @@ footer {
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:UAUX?</td>
+<td>MEASURE:RNG1:UL1?</td>
 <td>V</td>
 </tr>
 </table>
