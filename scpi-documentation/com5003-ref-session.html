@@ -170,19 +170,19 @@ footer {
           <path class="st0" d="M215.6,63.2l-3.5-9.9h-19.3l-3.4,9.9h-16.5l0-0.7l20.9-53.7h22.4l19,53.7v0.7H215.6z M202.7,23.8L195.8,44 h13.1L202.7,23.8z"></path>
       </g>
 
-    </svg>SCPI commands COM5003 - Reference session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>02-Nov-2026</b></i></footer><script>
+    </svg>SCPI commands COM5003 - Reference session<button id="toggleThemeButton" class="toggleThemeButton" onclick="toggleTheme()">Toggle theme</button></header><footer><i>Last updated on <b>11-Nov-2026</b></i></footer><script>
   function toggleTheme() {
     var element = document.body;
     element.classList.toggle("dark-theme");
   }
   </script><div class="content">
-<p>This document was created with operating system version: <b>release-4.10.1</b>.</p>
+<p>This document was created with operating system version: <b>release-4.10.2</b>.</p>
 <div class="toc">
 <h1 style="padding-top:0px;">Contents</h1>
 <ul>
 <li><a href="#ScpiStandard">1. SCPI Standard</a></li>
 <li><a href="#DeviceConnection">2. Device connection</a></li>
-<li><a href="#DeviceInfo">3. Device information</a></li>
+<li><a href="#DeviceInfo">3. Device status information</a></li>
 <li><a href="#DevIface">4. Device interface</a></li>
 <li><a href="#SystemCmds">5. System commands</a></li>
 <li><a href="#ScpiStandardCmds">6. Standard SCPI commands</a></li>
@@ -266,7 +266,7 @@ footer {
     </p>
 </body>
 </html></p>
-<h1 id="DeviceInfo">3. Device information</h1>
+<h1 id="DeviceInfo">3. Device status information</h1>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Status information</b></p>
 <table class="DataTable">
@@ -355,6 +355,14 @@ footer {
 <td>STATUS:DEV1:RELEASE?</td>
 </tr>
 <tr>
+<td>Returns the content of a text file installed on device:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>Command format:</b> 'STATUS:DEV1:LOCFILE? &lt;filename&gt;;'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>Retrieve example file:</b> 'STATUS:DEV1:LOCFILE? scpi-file-example.txt;'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>Path of files to read:</b> '/home/operator/scpi-files'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>To upload:</b> Go to Setting/Application and select 'Desktop (slow) / open file manager (in right bar) / copy file<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>Filename must not contain spaces</b><br/>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>STATUS:DEV1:LOCFILE?</td>
+</tr>
+<tr>
+<td>Returns the names of files installed on device:<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>Path of files to list:</b> '/home/operator/scpi-files'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&bull; <b>Files in subdirectories:</b> Shown as 'folder/file'<br/>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>STATUS:DEV1:LOCFILE:CATALOG?</td>
+</tr>
+<tr>
 <td>Serial number</td>
 <td>STATUS:DEV1:SERIAL?</td>
 </tr>
@@ -379,15 +387,15 @@ footer {
 <th>Data Type</th>
 </tr>
 <tr>
-<td>XSession name</td>
-<td>CONFIGURATION:SYST:XSESSION</td>
-<td>Desktop,Fullscreen</td>
-<td>STRING</td>
-</tr>
-<tr>
 <td>Session name</td>
 <td>CONFIGURATION:SYST:NAMESESSION</td>
 <td>Default,Changing energy direction,Reference,3 Systems / 2 Wires</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>XSession name</td>
+<td>CONFIGURATION:SYST:XSESSION</td>
+<td>Desktop,Fullscreen</td>
 <td>STRING</td>
 </tr>
 <tr>
@@ -462,12 +470,12 @@ footer {
 <td>Queries first error from error queue and removes it from queue</td>
 </tr>
 <tr>
-<td>SYSTEM:ERROR:ALL?</td>
-<td>Queries all errors from error queue and removes them from queue</td>
-</tr>
-<tr>
 <td>SYSTEM:ERROR:COUNT?</td>
 <td>Queries the number of error messages of internal error list</td>
+</tr>
+<tr>
+<td>SYSTEM:ERROR:ALL?</td>
+<td>Queries all errors from error queue and removes them from queue</td>
 </tr>
 </table>
 </div>
@@ -584,20 +592,20 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
-<td>Reference channel</td>
-<td>CONFIGURATION:DFT1:REFCHANNEL</td>
-<td></td>
-<td>REF1,REF2,REF3,REF4,REF5,REF6</td>
-<td>STRING</td>
-<td></td>
-</tr>
-<tr>
 <td>Integration time</td>
 <td>CONFIGURATION:DFT1:TINTEGRATION</td>
 <td>1 / 100</td>
 <td></td>
 <td>DOUBLE</td>
 <td>s</td>
+</tr>
+<tr>
+<td>Reference channel</td>
+<td>CONFIGURATION:DFT1:REFCHANNEL</td>
+<td></td>
+<td>REF1,REF2,REF3,REF4,REF5,REF6</td>
+<td>STRING</td>
+<td></td>
 </tr>
 </table>
 </div>
@@ -620,38 +628,8 @@ footer {
 <td>V</td>
 </tr>
 <tr>
-<td>Actual value phase/neutral / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF1?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>DC actual value</td>
-<td>MEASURE:DFT1:R4DC?</td>
-<td>V</td>
-</tr>
-<tr>
 <td>DC actual value</td>
 <td>MEASURE:DFT1:R2DC?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>DC actual value</td>
-<td>MEASURE:DFT1:R3DC?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value phase/neutral / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF2?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF6?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual value / cartesian format: re,im</td>
-<td>MEASURE:DFT1:REF5?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -661,12 +639,42 @@ footer {
 </tr>
 <tr>
 <td>DC actual value</td>
-<td>MEASURE:DFT1:R6DC?</td>
+<td>MEASURE:DFT1:R4DC?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
+<td>MEASURE:DFT1:REF6?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
+<td>MEASURE:DFT1:REF1?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Actual value phase/neutral / cartesian format: re,im</td>
 <td>MEASURE:DFT1:REF3?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>DC actual value</td>
+<td>MEASURE:DFT1:R6DC?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value phase/neutral / cartesian format: re,im</td>
+<td>MEASURE:DFT1:REF2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>DC actual value</td>
+<td>MEASURE:DFT1:R3DC?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual value / cartesian format: re,im</td>
+<td>MEASURE:DFT1:REF5?</td>
 <td>V</td>
 </tr>
 </table>
@@ -703,13 +711,7 @@ footer {
 </tr>
 <tr>
 <td>Channel's range</td>
-<td>SENSE:RNG1:REF1:RANGE</td>
-<td>R10V,R0V</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>Channel's range</td>
-<td>SENSE:RNG1:REF2:RANGE</td>
+<td>SENSE:RNG1:REF4:RANGE</td>
 <td>R10V,R0V</td>
 <td>STRING</td>
 </tr>
@@ -721,13 +723,7 @@ footer {
 </tr>
 <tr>
 <td>Channel's range</td>
-<td>SENSE:RNG1:REF5:RANGE</td>
-<td>R10V,R0V</td>
-<td>STRING</td>
-</tr>
-<tr>
-<td>Channel's range</td>
-<td>SENSE:RNG1:REF4:RANGE</td>
+<td>SENSE:RNG1:REF1:RANGE</td>
 <td>R10V,R0V</td>
 <td>STRING</td>
 </tr>
@@ -737,18 +733,30 @@ footer {
 <td>R10V,R0V</td>
 <td>STRING</td>
 </tr>
+<tr>
+<td>Channel's range</td>
+<td>SENSE:RNG1:REF2:RANGE</td>
+<td>R10V,R0V</td>
+<td>STRING</td>
+</tr>
+<tr>
+<td>Channel's range</td>
+<td>SENSE:RNG1:REF5:RANGE</td>
+<td>R10V,R0V</td>
+<td>STRING</td>
+</tr>
 </table>
 </div>
 <div class="DataTableDiv">
 <p class="DataTableName"><b>Catalog</b></p>
 <table class="DataTable">
 <tr><th>SCPI query</th></tr>
-<tr><td>SENSE:RNG1:REF1:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:REF2:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:REF6:RANGE:CATALOG?</td></tr>
-<tr><td>SENSE:RNG1:REF5:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:REF4:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:REF6:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:REF1:RANGE:CATALOG?</td></tr>
 <tr><td>SENSE:RNG1:REF3:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:REF2:RANGE:CATALOG?</td></tr>
+<tr><td>SENSE:RNG1:REF5:RANGE:CATALOG?</td></tr>
 </table>
 </div>
 <div class="DataTableDiv">
@@ -786,8 +794,32 @@ footer {
 <th>Unit</th>
 </tr>
 <tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:REF4:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
 <td>Channel grouping on/off</td>
 <td>CONFIGURATION:RNG1:GROUPING</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:REF6:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:REF1:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -803,47 +835,7 @@ footer {
 </tr>
 <tr>
 <td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF1:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF2:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Range timer for range decrease</td>
-<td>CONFIGURATION:RNG1:RNGTIMER</td>
-<td>0 / 600000</td>
-<td></td>
-<td>INTEGER</td>
-<td>ms</td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF6:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF5:INVERTPHASE</td>
-<td>0 / 1</td>
-<td></td>
-<td>BOOL</td>
-<td></td>
-</tr>
-<tr>
-<td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF4:INVERTPHASE</td>
+<td>CONFIGURATION:RNG1:REF3:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -867,7 +859,15 @@ footer {
 </tr>
 <tr>
 <td>Inverted Phase</td>
-<td>CONFIGURATION:RNG1:REF3:INVERTPHASE</td>
+<td>CONFIGURATION:RNG1:REF2:INVERTPHASE</td>
+<td>0 / 1</td>
+<td></td>
+<td>BOOL</td>
+<td></td>
+</tr>
+<tr>
+<td>Inverted Phase</td>
+<td>CONFIGURATION:RNG1:REF5:INVERTPHASE</td>
 <td>0 / 1</td>
 <td></td>
 <td>BOOL</td>
@@ -885,12 +885,12 @@ footer {
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:REF1?</td>
+<td>MEASURE:RNG1:REF4?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:REF2?</td>
+<td>MEASURE:RNG1:REF6?</td>
 <td>V</td>
 </tr>
 <tr>
@@ -900,22 +900,22 @@ footer {
 </tr>
 <tr>
 <td>Actual peak value</td>
-<td>MEASURE:RNG1:REF6?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual peak value</td>
-<td>MEASURE:RNG1:REF5?</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Actual peak value</td>
-<td>MEASURE:RNG1:REF4?</td>
+<td>MEASURE:RNG1:REF1?</td>
 <td>V</td>
 </tr>
 <tr>
 <td>Actual peak value</td>
 <td>MEASURE:RNG1:REF3?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual peak value</td>
+<td>MEASURE:RNG1:REF2?</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Actual peak value</td>
+<td>MEASURE:RNG1:REF5?</td>
 <td>V</td>
 </tr>
 </table>
